@@ -3,9 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/fragment_container"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    android:background="@color/gray">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       />
    <fragment
        android:id="@+id/nav_host_fragment"
        android:layout_width="0dp"
@@ -25,7 +30,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
     app:menu="@menu/btm_menu"
-    style="@style/Theme.Material3.DynamicColors.Light"/>
+    style="@style/Theme.Design.Light"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

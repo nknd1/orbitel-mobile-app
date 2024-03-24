@@ -4,6 +4,7 @@
     <color name="accent">#f52c56</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#E5E4E2</color>
     
     
     <color name="g_black">#33405f</color>

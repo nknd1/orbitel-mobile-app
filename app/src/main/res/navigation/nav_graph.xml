@@ -7,17 +7,16 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.myorbitel.HomeFragment"
+        android:name="com.example.myorbitel.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_tariffAndServiceFragment"
+            app:destination="@id/tariffAndServiceFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.myorbitel.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/balanceFragment"
-        android:name="com.example.myorbitel.BalanceFragment"
-        android:label="fragment_balance"
-        tools:layout="@layout/fragment_balance" />
+        android:id="@+id/tariffAndServiceFragment"
+        android:name="com.example.myorbitel.fragments.TariffAndServiceFragment"
+        android:label="fragment_tariff_and_service"
+        tools:layout="@layout/fragment_tariff_and_service" />
 </navigation>

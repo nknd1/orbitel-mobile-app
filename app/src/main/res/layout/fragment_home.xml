@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment">
+    android:background="@color/gray"
+    tools:context=".ui.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+
     <LinearLayout
         android:id="@+id/linear_header"
         android:layout_width="match_parent"
@@ -18,45 +21,77 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-
         <TextView
-            android:id="@+id/tv_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Тарифы и услуги"
-            android:textSize="@dimen/_23ssp"
-            android:textStyle="bold"/>
-
-
+            android:text="Главная"
+            android:textSize="@dimen/_30ssp"/>
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/tariffcard"
-        android:layout_width="349dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="@dimen/_60sdp"
-        android:layout_marginTop="@dimen/_60sdp"
-        android:layout_marginEnd="@dimen/_60sdp"
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="@dimen/_25ssp"
-        app:cardBackgroundColor="@color/primary">
+        app:cardCornerRadius="@dimen/_20ssp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Договор:"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/_20sdp"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_160sdp"
             android:layout_height="wrap_content"
-            android:text="Ваш тарифный план"
-            android:textStyle="normal"
-            android:textSize="@dimen/_15ssp"
-            android:layout_margin="@dimen/_13sdp"
-            android:textColor="@color/white"/>
+            android:layout_marginStart="@dimen/_140sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_1sdp"
+            android:text="№1234567"
+            android:textSize="@dimen/_15ssp" />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="teteet"
-            android:layout_margin="@dimen/_30sdp"
-            />
+            android:text="Лицевой счёт:"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/_50sdp"/>
+        <TextView
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_140sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginEnd="@dimen/_1sdp"
+            android:text="505001365"
+            android:textSize="@dimen/_15ssp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:orientation="horizontal"
+        app:cardCornerRadius="@dimen/_20ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+
     </androidx.cardview.widget.CardView>
 
 
