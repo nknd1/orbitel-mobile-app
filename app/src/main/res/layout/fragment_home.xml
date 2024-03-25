@@ -50,6 +50,7 @@
             android:layout_marginTop="@dimen/_20sdp"/>
 
         <TextView
+            android:id="@+id/tvContractNumber"
             android:layout_width="@dimen/_160sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_140sdp"
@@ -66,6 +67,7 @@
             android:layout_marginEnd="@dimen/_120sdp"
             android:layout_marginTop="@dimen/_50sdp"/>
         <TextView
+            android:id="@+id/tvPersonalAccount"
             android:layout_width="@dimen/_160sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_140sdp"
@@ -78,7 +80,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="@dimen/_260sdp"
-        android:layout_height="@dimen/_180sdp"
+        android:layout_height="@dimen/_100sdp"
         android:layout_marginStart="@dimen/_30sdp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="@dimen/_20sdp"
@@ -89,7 +91,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
+        <TextView
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="Текущий баланс:"
+            android:textSize="@dimen/_15ssp"
+            />
+        <TextView
+            android:id="@+id/tvBalance"
+            android:layout_width="@dimen/_105sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="339 р "
+            android:textSize="@dimen/_40ssp"
+            android:textStyle="bold"
+            />
+        <Button
+            android:id="@+id/btnPayBalance"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_140sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="Пополнить"/>
 
 
     </androidx.cardview.widget.CardView>
