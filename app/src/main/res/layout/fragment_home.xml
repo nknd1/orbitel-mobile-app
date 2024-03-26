@@ -53,7 +53,7 @@
 
         <TextView
             android:id="@+id/tvContractNumber"
-            android:layout_width="@dimen/_100sdp"
+            android:layout_width="@dimen/_110sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_140sdp"
             android:layout_marginTop="@dimen/_20sdp"
@@ -72,7 +72,7 @@
 
         <TextView
             android:id="@+id/tvPersonalAccount"
-            android:layout_width="@dimen/_100sdp"
+            android:layout_width="@dimen/_110sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_140sdp"
             android:layout_marginTop="@dimen/_50sdp"

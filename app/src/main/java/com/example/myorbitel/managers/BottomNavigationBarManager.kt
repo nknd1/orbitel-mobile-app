@@ -38,4 +38,6 @@ class BottomNavigationBarManager(private val context: Context, private val botto
         bottomNavigation.itemIconTintList = iconColorStateListChecked
         bottomNavigation.itemTextColor = textColorStateListChecked
     }
+
+
 }
