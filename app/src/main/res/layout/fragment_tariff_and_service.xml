@@ -8,6 +8,7 @@
     android:background="@color/gray">
 
     <!-- TODO: Update blank fragment layout -->
+
     <LinearLayout
         android:id="@+id/linear_header"
         android:layout_width="match_parent"
@@ -28,10 +29,11 @@
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_267sdp"
-        android:layout_height="@dimen/_150sdp"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="@dimen/_70sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:orientation="horizontal"
         app:cardCornerRadius="@dimen/_20ssp"
@@ -99,37 +101,5 @@
             android:textSize="@dimen/_15ssp"
             />
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_267sdp"
-        android:layout_height="@dimen/_100sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginTop="@dimen/_300sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:orientation="horizontal"
-        app:cardCornerRadius="@dimen/_20ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="@dimen/_170sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:text="Подключенные услуги:"
-            android:textSize="@dimen/_15ssp" />
-
-        <TextView
-            android:id="@+id/tvService"
-            android:layout_width="@dimen/_180sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:text="Какая то услуга"
-            android:textSize="@dimen/_25ssp"
-            android:textStyle="bold|italic" />
-    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

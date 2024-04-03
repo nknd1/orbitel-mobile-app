@@ -14,7 +14,7 @@
         android:id="@+id/linear_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_22sdp"
+        android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:orientation="horizontal"
@@ -25,121 +25,116 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Главная"
-            android:textSize="@dimen/_30ssp" />
+            android:text="Личный кабинет"
+            android:textSize="@dimen/_25ssp" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_267sdp"
-        android:layout_height="@dimen/_100sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginTop="130dp"
+        android:id="@+id/cardInfo1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_100sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:orientation="horizontal"
-        app:cardCornerRadius="@dimen/_20ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="@dimen/_20ssp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_100sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_120sdp"
             android:text="Договор:"
-            android:textSize="@dimen/_15ssp" />
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/DarkGray" />
 
         <TextView
             android:id="@+id/tvContractNumber"
             android:layout_width="@dimen/_110sdp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_140sdp"
+            android:layout_marginStart="@dimen/_150sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_1sdp"
             android:text="№1234567"
             android:textSize="@dimen/_15ssp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_100sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_60sdp"
             android:layout_marginEnd="@dimen/_120sdp"
-            android:text="Лицевой счёт:"
-            android:textSize="@dimen/_15ssp" />
+            android:text="Лиц.счёт:"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/DarkGray"/>
 
         <TextView
             android:id="@+id/tvPersonalAccount"
             android:layout_width="@dimen/_110sdp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_140sdp"
-            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_60sdp"
             android:layout_marginEnd="@dimen/_1sdp"
             android:text="505001365"
             android:textSize="@dimen/_15ssp" />
 
     </androidx.cardview.widget.CardView>
 
+
+
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_267sdp"
-        android:layout_height="@dimen/_100sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginTop="300dp"
+        android:id="@+id/cardInfo2"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_140sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_230sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:orientation="horizontal"
-        app:cardCornerRadius="@dimen/_20ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="@dimen/_20ssp">
 
         <TextView
-            android:layout_width="@dimen/_120sdp"
+            android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_20sdp"
-            android:text="Текущий баланс:"
-            android:textSize="@dimen/_15ssp" />
+            android:text="Баланс"
+            android:gravity="center"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="normal"
+            android:textColor="@color/DarkGray"/>
 
         <TextView
             android:id="@+id/tvBalance"
-            android:layout_width="@dimen/_120sdp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:gravity="center"
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_20sdp"
-            android:text="339 р "
+            android:text="339"
+
             android:textSize="@dimen/_40ssp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnPayBalance"
-            android:layout_width="@dimen/_100sdp"
+            android:id="@+id/btnTopUpBalance"
+            android:layout_width="@dimen/_110sdp"
             android:layout_height="@dimen/_40sdp"
-            android:layout_marginStart="@dimen/_150sdp"
-            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_90sdp"
             android:layout_marginEnd="@dimen/_20sdp"
-            android:text="Пополнить" />
-
-
+            android:text="Пополнить"
+            android:gravity="center"
+            android:textSize="@dimen/_10ssp"/>
     </androidx.cardview.widget.CardView>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="32dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="32dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
