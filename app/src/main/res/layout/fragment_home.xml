@@ -89,8 +89,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardInfo2"
-        android:layout_width="@dimen/_130sdp"
-        android:layout_height="@dimen/_140sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_230sdp"
         android:layout_marginEnd="@dimen/_20sdp"
@@ -102,9 +102,9 @@
         app:cardCornerRadius="@dimen/_20ssp">
 
         <TextView
-            android:layout_width="@dimen/_60sdp"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:text="Баланс"
@@ -115,11 +115,12 @@
 
         <TextView
             android:id="@+id/tvBalance"
-            android:layout_width="@dimen/_130sdp"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"
             android:gravity="center"
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
             android:text="339"
 
             android:textSize="@dimen/_40ssp"
@@ -127,14 +128,28 @@
 
         <Button
             android:id="@+id/btnTopUpBalance"
-            android:layout_width="@dimen/_110sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_90sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:text="Пополнить"
             android:gravity="center"
             android:textSize="@dimen/_10ssp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_155sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="История операций"
+            android:gravity="center"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="normal"
+            android:textColor="@color/primary"/>
     </androidx.cardview.widget.CardView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
