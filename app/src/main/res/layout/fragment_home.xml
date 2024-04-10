@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Личный кабинет"
-            android:textSize="@dimen/_25ssp" />
+            android:textSize="@dimen/_20ssp" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -60,7 +60,7 @@
             android:layout_marginStart="@dimen/_150sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_1sdp"
-            android:text="№1234567"
+
             android:textSize="@dimen/_15ssp" />
 
         <TextView
@@ -80,7 +80,7 @@
             android:layout_marginStart="@dimen/_150sdp"
             android:layout_marginTop="@dimen/_60sdp"
             android:layout_marginEnd="@dimen/_1sdp"
-            android:text="505001365"
+
             android:textSize="@dimen/_15ssp" />
 
     </androidx.cardview.widget.CardView>
@@ -121,7 +121,7 @@
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:layout_marginStart="@dimen/_20sdp"
-            android:text="339"
+
 
             android:textSize="@dimen/_40ssp"
             android:textStyle="bold" />

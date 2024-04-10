@@ -10,6 +10,7 @@ import androidx.core.content.ContentProviderCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.myorbitel.R
+import com.example.myorbitel.data.retrofit.ContractInfoApi
 import com.example.myorbitel.data.retrofit.TariffsApi
 import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
@@ -30,45 +31,55 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        /*
-        val tv = view.findViewById<TextView>(R.id.tv_tariff)
+        val tvBalance = view.findViewById<TextView>(R.id.tvBalance)
+        val tvContractNumber = view.findViewById<TextView>(R.id.tvContractNumber)
+        val tvPersonalAccount = view.findViewById<TextView>(R.id.tvPersonalAccount)
 
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
+
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
-        val lifecycleOwner = viewLifecycleOwner
+
+
+
+
+        viewLifecycleOwner
+
+
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://f4f1-89-31-37-128.ngrok-free.app/api/v1/")
+            .baseUrl("http://10.0.2.2:3001/api/v1/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val tariffsApi = retrofit.create(TariffsApi::class.java)
+        val contractInfoApi = retrofit.create(ContractInfoApi::class.java)
 
         viewLifecycleOwner.lifecycleScope.launch {
             try {
-                val tariffs = tariffsApi.getTariffById(1)
-                Log.d("MyFragment", "Попытка получить тариф из сети")
+                //val tariffs= tariffsApi.getTariffById(1)
+                val contractInfo = contractInfoApi.getContractInfo(16)
+                Log.d("MyFragment", "Попытка получить договор из сети")
 
-                if (tariffs.isNotEmpty()) {
-                    val tariff = tariffs[0] // Предполагается, что возвращается только один тариф
-                    Log.d("MyFragment", "Тариф успешно получен: ${tariff.tariff_name}")
-                    tv.text = tariff.tariff_name
+                if (contractInfo.isNotEmpty()) {
+                    val contract = contractInfo[0] // Предполагается, что возвращается только один договор
+                    Log.d("MyFragment", "Информация о договоре успешно получена: ${contract.contract_number}")
+                    tvBalance.text = contract.balance
+                    tvContractNumber.text = contract.contract_number
+                    tvPersonalAccount.text = contract.personal_account
+
                 } else {
-                    Log.e("MyFragment", "Получен пустой список тарифов")
+                    Log.e("MyFragment", "Получен пустой список договоров")
                 }
             } catch (e: Exception) {
                 // Обработка ошибок
                 val text = "ошибка сервера"
 
-                Log.e("MyFragment", "Ошибка при получении тарифа: ${e.message}")
+                Log.e("MyFragment", "Ошибка при получении информации о договоре: ${e.message}")
             }
         }
     }
 
-         */
-    }
 
 
     override fun onCreateView(

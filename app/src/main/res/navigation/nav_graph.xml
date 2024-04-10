@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/tariffAndServiceFragment"
-        android:name="com.example.myorbitel.fragments.TariffAndServiceFragment"
+        android:name="com.example.myorbitel.ui.fragments.TariffAndServiceFragment"
         android:label="fragment_tariff_and_service"
         tools:layout="@layout/fragment_tariff_and_service" />
 </navigation>
