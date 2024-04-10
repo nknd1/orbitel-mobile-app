@@ -18,11 +18,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -42,17 +38,12 @@ class HomeFragment : Fragment() {
 
 
 
-
-        viewLifecycleOwner
-
-
         val retrofit = Retrofit.Builder()
             .baseUrl("http://10.0.2.2:3001/api/v1/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val tariffsApi = retrofit.create(TariffsApi::class.java)
         val contractInfoApi = retrofit.create(ContractInfoApi::class.java)
 
         viewLifecycleOwner.lifecycleScope.launch {
