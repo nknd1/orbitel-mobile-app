@@ -1,22 +1,12 @@
-package com.example.myorbitel.ui
+package com.example.myorbitel.ui.fragments.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.core.content.ContentProviderCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import com.example.myorbitel.R
-import com.example.myorbitel.data.retrofit.ContractInfoApi
-import com.example.myorbitel.data.retrofit.TariffsApi
-import kotlinx.coroutines.launch
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.example.myorbitel.data.retrofit.api.RetrofitBuilder
 
 
 class HomeFragment : Fragment() {
@@ -27,13 +17,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val retrofitBuilder = RetrofitBuilder.contractInfoApi
+        /*
         val tvBalance = view.findViewById<TextView>(R.id.tvBalance)
         val tvContractNumber = view.findViewById<TextView>(R.id.tvContractNumber)
         val tvPersonalAccount = view.findViewById<TextView>(R.id.tvPersonalAccount)
 
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
-
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
 
@@ -71,8 +62,10 @@ class HomeFragment : Fragment() {
         }
     }
 
+         */
 
 
+        }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

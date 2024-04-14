@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
-    tools:context=".ui.HomeFragment">
+    tools:context=".ui.fragments.home.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -128,13 +128,14 @@
 
         <Button
             android:id="@+id/btnTopUpBalance"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_90sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:text="Пополнить"
             android:gravity="center"
+            android:layout_gravity="center_horizontal"
             android:textSize="@dimen/_10ssp"/>
 
         <TextView

@@ -1,4 +1,4 @@
-package com.example.myorbitel.data.retrofit
+package com.example.myorbitel.data.retrofit.model
 
 data class Tariffs(
     val tariff_id: Int,

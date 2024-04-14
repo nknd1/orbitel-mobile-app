@@ -2,12 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    android:id="@+id/nav_graph">
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.myorbitel.ui.HomeFragment"
+        android:name="com.example.myorbitel.ui.fragments.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/tariffAndServiceFragment"
-        android:name="com.example.myorbitel.ui.fragments.TariffAndServiceFragment"
+        android:name="com.example.myorbitel.ui.fragments.tas.TariffAndServiceFragment"
         android:label="fragment_tariff_and_service"
         tools:layout="@layout/fragment_tariff_and_service" />
 </navigation>

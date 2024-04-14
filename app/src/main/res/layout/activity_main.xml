@@ -30,6 +30,9 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
     app:menu="@menu/btm_menu"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginBottom="20dp"
+    android:background="@drawable/round_corners"
     style="@style/Theme.Design.Light"/>
 
 

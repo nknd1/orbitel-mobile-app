@@ -1,5 +1,6 @@
-package com.example.myorbitel.data.retrofit
+package com.example.myorbitel.data.retrofit.api
 
+import com.example.myorbitel.data.retrofit.model.Tariffs
 import retrofit2.http.GET
 import retrofit2.http.Path
 
