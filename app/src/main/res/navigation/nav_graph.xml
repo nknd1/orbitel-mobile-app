@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -19,4 +19,9 @@
         android:name="com.example.myorbitel.ui.fragments.tas.TariffAndServiceFragment"
         android:label="fragment_tariff_and_service"
         tools:layout="@layout/fragment_tariff_and_service" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myorbitel.ui.fragments.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
