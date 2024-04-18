@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myorbitel.R
 import com.example.myorbitel.data.retrofit.api.RetrofitBuilder
+import okhttp3.logging.HttpLoggingInterceptor
 
 
 class HomeFragment : Fragment() {
@@ -17,7 +18,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val retrofitBuilder = RetrofitBuilder.contractInfoApi
+
+
         /*
         val tvBalance = view.findViewById<TextView>(R.id.tvBalance)
         val tvContractNumber = view.findViewById<TextView>(R.id.tvContractNumber)
