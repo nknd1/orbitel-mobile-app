@@ -30,12 +30,26 @@ class MainActivity : AppCompatActivity() {
 
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.btm_nav)
+
         val bottomNavigationManager = BottomNavigationBarManager(this, bottomNavigation)
         bottomNavigationManager.setupBottomNavigationBar()
         val backgroundColor = ContextCompat.getColor(this, R.color.white)
         bottomNavigation.setBackgroundColor(backgroundColor)
 
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+        //NavigationUI.setupWithNavController(bottomNavigation, navController)
+
+
+        navController.addOnDestinationChangedListener{_, destination, _ ->
+         when(destination.id){
+          R.id.loginFragment -> {
+           bottomNavigation.visibility = View.GONE
+          }
+          else -> {
+           bottomNavigation.visibility = View.VISIBLE
+          }
+         }
+        }
         NavigationUI.setupWithNavController(bottomNavigation, navController)
 
 
