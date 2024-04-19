@@ -19,7 +19,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
         /*
         val tvBalance = view.findViewById<TextView>(R.id.tvBalance)
         val tvContractNumber = view.findViewById<TextView>(R.id.tvContractNumber)
