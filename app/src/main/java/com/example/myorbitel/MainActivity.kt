@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         //NavigationUI.setupWithNavController(bottomNavigation, navController)
         navController.addOnDestinationChangedListener{_, destination, _ ->
          when(destination.id){
-          R.id.loginFragment -> {
+          R.id.loginFragment, R.id.topUpBalanceFrag-> {
            bottomNavigation.visibility = View.GONE
           }
           else -> {
