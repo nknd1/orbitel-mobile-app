@@ -4,12 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.auth.LoginFragment"
-    android:background="@color/white">
+    tools:context=".ui.fragments.TopUpBalanceFrag">
 
     <!-- TODO: Update blank fragment layout -->
-
-
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,49 +29,29 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/personalAccountET"
+                    android:id="@+id/topUpET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Лицевой счёт"
+                    android:hint="Введите сумму"
                     android:inputType="text"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="12dp" />
-            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordTil"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:passwordToggleEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passwordEt"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/topUp"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Пароль"
-                    android:inputType="textPassword"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="12dp"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginTop="50dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="Пополнить" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/loginBtn"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:text="ВОЙТИ" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
+
     </com.google.android.material.card.MaterialCardView>
-
-
-
 
 </LinearLayout>

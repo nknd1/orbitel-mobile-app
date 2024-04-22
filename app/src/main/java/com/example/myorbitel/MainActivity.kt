@@ -23,23 +23,18 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity() {
        override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
-
-
-
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.btm_nav)
 
         val bottomNavigationManager = BottomNavigationBarManager(this, bottomNavigation)
         bottomNavigationManager.setupBottomNavigationBar()
+
         val backgroundColor = ContextCompat.getColor(this, R.color.white)
         bottomNavigation.setBackgroundColor(backgroundColor)
 
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         //NavigationUI.setupWithNavController(bottomNavigation, navController)
-
-
         navController.addOnDestinationChangedListener{_, destination, _ ->
          when(destination.id){
           R.id.loginFragment -> {
@@ -51,10 +46,5 @@ class MainActivity : AppCompatActivity() {
          }
         }
         NavigationUI.setupWithNavController(bottomNavigation, navController)
-
-
-
     }
-
-
 }
