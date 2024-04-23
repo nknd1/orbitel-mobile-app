@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_homeFragment_to_tariffAndServiceFragment"
             app:destination="@id/tariffAndServiceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_topUpBalanceFrag"
+            app:destination="@id/topUpBalanceFrag" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyOperation"
+            app:destination="@id/historyOperation" />
     </fragment>
     <fragment
         android:id="@+id/tariffAndServiceFragment"
@@ -23,15 +29,27 @@
         android:id="@+id/loginFragment"
         android:name="com.example.myorbitel.ui.fragments.auth.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/historyOperation"
         android:name="com.example.myorbitel.ui.fragments.HistoryOperation"
         android:label="fragment_history_operation"
-        tools:layout="@layout/fragment_history_operation" />
+        tools:layout="@layout/fragment_history_operation" >
+        <action
+            android:id="@+id/action_historyOperation_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/topUpBalanceFrag"
         android:name="com.example.myorbitel.ui.fragments.TopUpBalanceFrag"
         android:label="fragment_top_up_balance"
-        tools:layout="@layout/fragment_top_up_balance" />
+        tools:layout="@layout/fragment_top_up_balance" >
+        <action
+            android:id="@+id/action_topUpBalanceFrag_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
