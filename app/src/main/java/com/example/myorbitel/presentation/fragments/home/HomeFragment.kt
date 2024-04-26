@@ -8,8 +8,6 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myorbitel.R
-import com.example.myorbitel.data.retrofit.api.RetrofitBuilder
-import okhttp3.logging.HttpLoggingInterceptor
 
 
 class HomeFragment : Fragment() {

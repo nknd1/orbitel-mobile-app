@@ -1,6 +1,4 @@
-package com.example.myorbitel.data.retrofit.model
-
-import com.google.gson.annotations.SerializedName
+package com.example.myorbitel.models
 
 data class ContractInformation(
     val contract_id: Int,
