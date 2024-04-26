@@ -1,4 +1,4 @@
-package com.example.myorbitel.viewmodels
+package com.example.myorbitel.presentation.fragments.auth
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

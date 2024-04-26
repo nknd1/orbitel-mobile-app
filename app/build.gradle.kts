@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -89,5 +91,11 @@ dependencies {
     implementation("androidx.room:room-ktx:$room_version")
 
     implementation("androidx.core:core-splashscreen:1.0.1")
+
+
+    //hilt
+    val hilt_version = "2.51"
+    implementation ("com.google.dagger:hilt-android:$hilt_version")
+    kapt ("com.google.dagger:hilt-compiler:$hilt_version")
 
 }

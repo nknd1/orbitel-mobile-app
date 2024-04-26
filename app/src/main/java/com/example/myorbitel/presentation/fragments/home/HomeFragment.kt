@@ -1,4 +1,4 @@
-package com.example.myorbitel.ui.fragments.home
+package com.example.myorbitel.presentation.fragments.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

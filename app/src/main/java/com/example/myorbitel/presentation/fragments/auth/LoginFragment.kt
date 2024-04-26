@@ -1,4 +1,4 @@
-package com.example.myorbitel.ui.fragments.auth
+package com.example.myorbitel.presentation.fragments.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,6 @@ import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.myorbitel.R
-import com.example.myorbitel.viewmodels.LoginViewModel
 
 
 class LoginFragment : Fragment() {

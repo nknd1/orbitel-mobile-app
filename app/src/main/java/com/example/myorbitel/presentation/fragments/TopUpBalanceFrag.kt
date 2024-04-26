@@ -1,4 +1,4 @@
-package com.example.myorbitel.ui.fragments
+package com.example.myorbitel.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import com.example.myorbitel.R
 
 
-class HistoryOperation : Fragment() {
-
+class TopUpBalanceFrag : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
     }
 
@@ -21,7 +21,9 @@ class HistoryOperation : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history_operation, container, false)
+
+        return inflater.inflate(R.layout.fragment_top_up_balance, container, false)
     }
+
 
 }

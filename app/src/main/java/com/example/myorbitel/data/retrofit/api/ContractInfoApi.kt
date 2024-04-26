@@ -13,5 +13,6 @@ interface ContractInfoApi {
 
    // @POST("contracts/balance/{id}")
    // suspend fun topUpBalance(@Query )
-
+    @POST("contracts/auth")
+    suspend fun loginToContracts()
 }
