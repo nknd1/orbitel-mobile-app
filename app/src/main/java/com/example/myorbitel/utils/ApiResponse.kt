@@ -4,7 +4,7 @@ import android.os.Message
 import com.example.myorbitel.models.ErrorResponse
 
 sealed class ApiResponse<out T>{
-    object Loading: ApiResponse<Nothing>()
+    data object Loading: ApiResponse<Nothing>()
 
     data class Success<out T>(
         val data: T

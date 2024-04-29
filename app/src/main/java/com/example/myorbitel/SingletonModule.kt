@@ -60,7 +60,7 @@ class SingletonModule {
     @Provides
     fun provideRetrofitBuilder(): Retrofit.Builder =
         Retrofit.Builder()
-            .baseUrl("https://jwt-test-api.onrender.com/api/")
+            .baseUrl("http://10.0.2.2:3001/api/v1/")
             .addConverterFactory(GsonConverterFactory.create())
 
     @Singleton

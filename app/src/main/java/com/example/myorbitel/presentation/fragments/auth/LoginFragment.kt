@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.myorbitel.R
 import com.example.myorbitel.viewmodels.LoginViewModel
@@ -15,6 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 class LoginFragment : Fragment() {
    private lateinit var viewModel: LoginViewModel
+   private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

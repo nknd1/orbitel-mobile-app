@@ -44,7 +44,7 @@ class AuthAuthenticator @Inject constructor(
         val okHttpClient = OkHttpClient.Builder().addInterceptor(loggingInterceptor).build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://jwt-test-api.onrender.com/api/")
+            .baseUrl("http://10.0.2.2:3001/api/v1/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
