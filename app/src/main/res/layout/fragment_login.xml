@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.fragments.auth.LoginFragment"
-    android:background="@color/white">
+    android:background="@color/gray">
 
     <!-- TODO: Update blank fragment layout -->
 
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_30sdp"
@@ -76,7 +77,77 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_header">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <!-- TextView1 -->
+
+            <!-- TextView2 -->
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/materialButton"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_person"
+                app:iconGravity="textTop"
+                app:iconSize="@dimen/_40sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <TextView
+                android:id="@+id/tvClientFioFromContract"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="wrap_content"
+                android:text="НИКИТА ДЕНИСОВИЧ YBRBNBENEYEYE"
+                android:layout_marginStart="10dp"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/materialCardView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.171"
+                app:layout_constraintStart_toEndOf="@+id/materialButton"
+                app:layout_constraintTop_toBottomOf="@+id/linear_header"
+                app:layout_constraintVertical_bias="0.261">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvClientPhoneNumberFromContract"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="wrap_content"
+                android:text="+7 999 999 99 99"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/materialCardView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.437"
+                app:layout_constraintStart_toEndOf="@+id/materialButton"
+                app:layout_constraintTop_toBottomOf="@+id/tvClientFioFromContract">
+
+            </TextView>
+            <!-- Button -->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

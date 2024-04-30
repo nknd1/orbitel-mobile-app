@@ -7,8 +7,6 @@
     android:background="@color/gray"
     tools:context=".presentation.fragments.home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
 
     <LinearLayout
         android:id="@+id/linear_header"
@@ -29,128 +27,214 @@
             android:textSize="@dimen/_20ssp" />
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardInfo1"
+    <com.google.android.material.card.MaterialCardView
+
+        android:id="@+id/materialCardView37"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_110sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_100sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="@dimen/_8sdp"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="@dimen/_20ssp">
+        app:layout_constraintTop_toBottomOf="@+id/linear_header">
 
-        <TextView
-            android:layout_width="@dimen/_100sdp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_120sdp"
-            android:text="Договор:"
-            android:textSize="@dimen/_15ssp"
-            android:textColor="@color/DarkGray" />
+            android:orientation="vertical"
+            android:padding="15dp">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/materialButton"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_person"
+                app:iconGravity="textTop"
+                app:iconSize="@dimen/_40sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </com.google.android.material.button.MaterialButton>
 
-        <TextView
-            android:id="@+id/tvContractNumber"
-            android:layout_width="@dimen/_110sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_150sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_1sdp"
+            <TextView
+                android:id="@+id/tvClientFioFromContract"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:text="НИКИТА ДЕНИСОВИЧ НИКИФОРОВ"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tvClientPhoneNumberFromContract"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.058"
+                app:layout_constraintStart_toEndOf="@+id/materialButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.028">
+            </TextView>
 
-            android:textSize="@dimen/_15ssp" />
+            <TextView
+                android:id="@+id/tvClientPhoneNumberFromContract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="+7 999 999 99 99"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.063"
+                app:layout_constraintStart_toEndOf="@+id/materialButton">
+            </TextView>
+            <!-- Button -->
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_60sdp"
-            android:layout_marginEnd="@dimen/_120sdp"
-            android:text="Лиц.счёт:"
-            android:textSize="@dimen/_15ssp"
-            android:textColor="@color/DarkGray"/>
-
-        <TextView
-            android:id="@+id/tvPersonalAccount"
-            android:layout_width="@dimen/_110sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_150sdp"
-            android:layout_marginTop="@dimen/_60sdp"
-            android:layout_marginEnd="@dimen/_1sdp"
-
-            android:textSize="@dimen/_15ssp" />
-
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardInfo2"
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView3"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_230sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="@dimen/_8sdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="@dimen/_20ssp">
+        app:layout_constraintTop_toBottomOf="@+id/linear_header">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:text="Баланс"
-            android:gravity="center"
-            android:textSize="@dimen/_15ssp"
-            android:textStyle="normal"
-            android:textColor="@color/DarkGray"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
 
-        <TextView
-            android:id="@+id/tvBalance"
+            <!-- TextView1 -->
+
+            <!-- TextView2 -->
+
+
+            <TextView
+                android:id="@+id/tvTar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ваш тарифный план"
+                android:textColor="@color/DarkGray"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.003"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTariffInfoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Домашний плюс"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.004"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTariffDescription"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="22dp"
+                android:text="Подробнее"
+                android:textSize="@dimen/_9ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvTariffInfoName"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </com.google.android.material.button.MaterialButton>
+
+
+            <!-- Button -->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
-            android:gravity="center"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
 
+            <!-- TextView1 -->
+            <TextView
+                android:id="@+id/tvB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Текущий баланс"
+                android:textColor="@color/DarkGray"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            android:textSize="@dimen/_40ssp"
-            android:textStyle="bold" />
+            <!-- TextView2 -->
 
-        <Button
-            android:id="@+id/btnTopUpBalance"
-            android:layout_width="@dimen/_150sdp"
-            android:layout_height="@dimen/_50sdp"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_90sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:text="Пополнить"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:textSize="@dimen/_10ssp"/>
+            <!-- Button -->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_155sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:text="История операций"
-            android:gravity="center"
-            android:textSize="@dimen/_15ssp"
-            android:textStyle="normal"
-            android:textColor="@color/primary"/>
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvBalanceInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500 руб"
+                android:textSize="@dimen/_30ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvB" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTopUpBalance"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="right"
+                android:text="Пополнить"
+                android:textSize="@dimen/_9ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tvBalanceInfo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+

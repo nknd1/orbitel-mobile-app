@@ -11,20 +11,12 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_tariffAndServiceFragment"
-            app:destination="@id/tariffAndServiceFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_topUpBalanceFrag"
             app:destination="@id/topUpBalanceFrag" />
         <action
             android:id="@+id/action_homeFragment_to_historyOperation"
             app:destination="@id/historyOperation" />
     </fragment>
-    <fragment
-        android:id="@+id/tariffAndServiceFragment"
-        android:name="com.example.myorbitel.presentation.fragments.tas.TariffAndServiceFragment"
-        android:label="fragment_tariff_and_service"
-        tools:layout="@layout/fragment_tariff_and_service" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.myorbitel.presentation.fragments.auth.LoginFragment"

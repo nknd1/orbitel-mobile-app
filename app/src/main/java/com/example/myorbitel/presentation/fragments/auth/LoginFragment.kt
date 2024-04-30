@@ -6,32 +6,48 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.myorbitel.R
+import com.example.myorbitel.databinding.FragmentLoginBinding
 import com.example.myorbitel.viewmodels.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
 class LoginFragment : Fragment() {
-   private lateinit var viewModel: LoginViewModel
-   private lateinit var navController: NavController
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
 
+    /*
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
 
+     */
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.loginBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+        }
+        return binding.root
+        //return inflater.inflate(R.layout.fragment_login, container, false)
 
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+
+    /*
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -52,5 +68,7 @@ class LoginFragment : Fragment() {
     }
 
 
+
+     */
 
 }
