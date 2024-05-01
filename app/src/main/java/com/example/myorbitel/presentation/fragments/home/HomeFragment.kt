@@ -86,6 +86,7 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_topUpBalanceFrag)
         }
 
+
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
@@ -111,7 +112,7 @@ class HomeFragment : Fragment() {
                     Timber.tag("MyFragment")
                         .d("Информация о договоре успешно получена: %s", contract.contract_number)
                     binding.tvBalanceInfo.text = contract.balance
-                    binding.tvTariffInfoName.text = contract.tariff_name
+                    binding.tvTariffName.text = contract.tariff_name
 
 
                 } else {
