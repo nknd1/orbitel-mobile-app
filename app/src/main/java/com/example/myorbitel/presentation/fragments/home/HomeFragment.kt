@@ -1,18 +1,15 @@
 package com.example.myorbitel.presentation.fragments.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.myorbitel.R
 import com.example.myorbitel.data.retrofit.api.ContractInfoApi
 import com.example.myorbitel.databinding.FragmentHomeBinding
-import com.example.myorbitel.databinding.FragmentLoginBinding
 import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -113,6 +110,7 @@ class HomeFragment : Fragment() {
                         .d("Информация о договоре успешно получена: %s", contract.contract_number)
                     binding.tvBalanceInfo.text = contract.balance
                     binding.tvTariffName.text = contract.tariff_name
+
 
 
                 } else {

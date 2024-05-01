@@ -50,8 +50,8 @@
                 android:id="@+id/materialButton"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
-                app:cornerRadius="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_7sdp"
+                app:cornerRadius="@dimen/_20sdp"
                 app:icon="@drawable/ic_person"
                 app:iconGravity="textTop"
                 app:iconSize="@dimen/_36sdp"
@@ -181,6 +181,49 @@
 
             </TextView>
 
+            <TextView
+                android:id="@+id/tvInternetSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="8dp"
+                android:text="100"
+                android:textSize="@dimen/_23ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTariffName">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textViewd2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="мбит/с"
+                android:textColor="@color/DarkGray"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="@+id/tvInternetSpeed"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tvInternetSpeed"
+                app:layout_constraintTop_toBottomOf="@+id/tvInternetSpeed">
+
+            </TextView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="119dp" />
+
 
             <!-- Button -->
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -216,8 +259,8 @@
                 android:id="@+id/tvB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Текущий баланс"
                 android:layout_marginStart="@dimen/_3sdp"
+                android:text="Текущий баланс"
                 android:textColor="@color/DarkGray"
                 android:textSize="@dimen/_10ssp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -229,8 +272,8 @@
                 android:id="@+id/tvBalanceInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="500 руб"
                 android:layout_marginStart="@dimen/_2sdp"
+                android:text="500 руб"
                 android:textSize="@dimen/_25ssp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -259,6 +302,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="67dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="409dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="426dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
