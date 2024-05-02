@@ -10,18 +10,20 @@ import androidx.navigation.fragment.findNavController
 import com.example.myorbitel.R
 import com.example.myorbitel.data.retrofit.api.ContractInfoApi
 import com.example.myorbitel.databinding.FragmentHomeBinding
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import timber.log.Timber
+import kotlin.concurrent.thread
 
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
+    private val TAG: String = "AppDebug"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -78,9 +80,15 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
         binding.btnTopUpBalance.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_topUpBalanceFrag)
+        }
+
+        binding.materialCardViewTariff.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_tariffDescription)
         }
 
 

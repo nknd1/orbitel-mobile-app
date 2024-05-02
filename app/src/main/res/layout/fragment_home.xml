@@ -98,10 +98,11 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView3"
+        android:id="@+id/materialCardViewTariff"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_130sdp"
         android:layout_marginTop="10dp"
+        android:clickable="true"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:cardElevation="@dimen/_8sdp"
