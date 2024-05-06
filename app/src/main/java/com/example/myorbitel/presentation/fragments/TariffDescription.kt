@@ -5,24 +5,34 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.myorbitel.R
+import com.example.myorbitel.databinding.FragmentHistoryOperationBinding
 import com.example.myorbitel.databinding.FragmentTariffDescriptionBinding
 
 
 class TariffDescription : Fragment() {
     private var _binding: FragmentTariffDescriptionBinding? = null
     private val binding get() = _binding!!
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tariff_description, container, false)
+    ): View {
+        _binding = FragmentTariffDescriptionBinding.inflate(inflater, container, false)
+        //return inflater.inflate(R.layout.fragment_history_operation, container, false)
+
+        binding.btnBackTo.setOnClickListener {
+            findNavController().navigate(R.id.action_tariffDescription_to_homeFragment)
+        }
+        return binding.root
+    }
+
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 

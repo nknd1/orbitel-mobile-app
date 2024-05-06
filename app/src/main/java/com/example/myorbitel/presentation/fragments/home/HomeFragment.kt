@@ -38,6 +38,14 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_tariffDescription)
         }
 
+        /*
+        binding.materialCardViewServiceList.setOnClickListener{
+
+        }
+
+
+         */
+
 
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY

@@ -43,5 +43,9 @@
         android:id="@+id/tariffDescription"
         android:name="com.example.myorbitel.presentation.fragments.TariffDescription"
         android:label="fragment_tariff_description"
-        tools:layout="@layout/fragment_tariff_description" />
+        tools:layout="@layout/fragment_tariff_description" >
+        <action
+            android:id="@+id/action_tariffDescription_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
