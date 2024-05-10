@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -38,6 +39,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_tariffDescription)
         }
 
+        binding.btnProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+        }
+
         /*
         binding.materialCardViewServiceList.setOnClickListener{
 
@@ -45,7 +50,6 @@ class HomeFragment : Fragment() {
 
 
          */
-
 
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
@@ -72,6 +76,9 @@ class HomeFragment : Fragment() {
                         .d("Информация о договоре успешно получена: %s", contract.contract_number)
                     binding.tvBalanceInfo.text = contract.balance
                     binding.tvTariffName.text = contract.tariff_name
+                    binding.tvInternetSpeed.text = contract.speed
+                    binding.tvClientFioFromContract.text = contract.client_fio
+                    binding.tvClientPhoneNumberFromContract.text = contract.client_phone
                 } else {
                     Timber.tag("MyFragment").e("Получен пустой список договоров")
                 }

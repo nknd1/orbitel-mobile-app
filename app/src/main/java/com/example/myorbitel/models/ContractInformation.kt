@@ -8,5 +8,8 @@ data class ContractInformation(
     val personal_account: String,
     val tariff_name: String,
     val price_per_month: String,
-    val speed: String
+    val speed: String,
+    val client_fio: String,
+    val client_phone: String,
+    val client_address_registration: String,
 )
