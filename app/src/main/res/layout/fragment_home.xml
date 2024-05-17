@@ -28,7 +28,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView37"
         android:layout_width="@dimen/_250sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_80sdp"
         android:layout_marginTop="30dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
@@ -36,11 +36,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear_header">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="15dp">
+            android:padding="10dp">
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnProfile"
                 android:layout_width="@dimen/_40sdp"
@@ -57,34 +59,50 @@
             </com.google.android.material.button.MaterialButton>
 
             <TextView
-                android:id="@+id/tvClientFioFromContract"
-                android:layout_width="@dimen/_150sdp"
-                android:layout_height="@dimen/_27sdp"
-                android:layout_marginStart="20dp"
-                android:text="НИКИТА ДЕНИСОВИЧ НИКИФОРОВ"
-                android:textSize="@dimen/_9ssp"
-                android:textStyle="normal"
-                app:layout_constraintBottom_toTopOf="@+id/tvClientPhoneNumberFromContract"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.058"
-                app:layout_constraintStart_toEndOf="@+id/materialButton"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.028">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/tvClientPhoneNumberFromContract"
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+7 999 999 99 99"
-                android:textSize="@dimen/_10ssp"
-                android:textStyle="normal"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:text="Лицевой счёт:"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintStart_toEndOf="@+id/btnProfile"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPersonalAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="33333"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.057"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Адрес подключения:"
+                android:textSize="@dimen/_8ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/tvClientFioFromContract"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvClientFioFromContract">
-            </TextView>
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.409" />
+
+            <TextView
+                android:id="@+id/tvConnectAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Test test test test"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textView22" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -147,6 +165,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTariffName">
             </TextView>
+
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
@@ -154,10 +173,11 @@
                 android:text="₽/мес"
                 android:textColor="@color/DarkGray"
                 android:textSize="@dimen/_10ssp"
-                app:layout_constraintEnd_toEndOf="@+id/tvPricePerMonthForTariff"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvPricePerMonthForTariff"
+                app:layout_constraintEnd_toStartOf="@+id/textViewd2"
+                app:layout_constraintHorizontal_bias="0.058"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPricePerMonthForTariff">
+
             </TextView>
 
             <TextView
@@ -191,57 +211,95 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
-        android:layout_width="@dimen/_250sdp"
-        android:layout_height="@dimen/_80sdp"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_110sdp"
         android:layout_marginTop="10dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:cardElevation="@dimen/_8sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView37"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView37">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="@dimen/_15sdp">
+            android:padding="@dimen/_10sdp">
+
             <TextView
                 android:id="@+id/tvB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_3sdp"
+                android:gravity="center"
                 android:text="Текущий баланс"
                 android:textColor="@color/DarkGray"
                 android:textSize="@dimen/_10ssp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.005"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/tvBalanceInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:text="500 руб"
-                android:textSize="@dimen/_23ssp"
+                android:textSize="@dimen/_15ssp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvB"
+                app:layout_constraintStart_toStartOf="@+id/tvB"
                 app:layout_constraintTop_toBottomOf="@+id/tvB" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnTopUpBalance"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Пополнить"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvBalanceInfo"
+                app:layout_constraintStart_toStartOf="@+id/tvBalanceInfo"
+                app:layout_constraintTop_toBottomOf="@+id/tvBalanceInfo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardViewvsfs"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:clickable="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="10dp"
+        app:cardElevation="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@+id/materialCardView37"
+        app:layout_constraintStart_toEndOf="@+id/materialCardView"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView37">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvB4fs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Пополнить"
+                android:gravity="center"
+                android:text="История операций"
+                android:textColor="@color/DarkGray"
                 android:textSize="@dimen/_10ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/tvBalanceInfo"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.666" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+
 
 
     <com.google.android.material.card.MaterialCardView
@@ -295,13 +353,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Список тарифов"
+                android:text="Тарифы"
                 android:textSize="@dimen/_10ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </com.google.android.material.card.MaterialCardView>
 
 
@@ -327,12 +390,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Список услуг"
+                android:text="Услуги"
                 android:textSize="@dimen/_10ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

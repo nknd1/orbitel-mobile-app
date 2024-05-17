@@ -1,5 +1,6 @@
 package com.example.myorbitel.presentation.fragments.auth
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,8 +32,12 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+
+
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+
         binding.loginBtn.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
@@ -40,6 +45,7 @@ class LoginFragment : Fragment() {
         //return inflater.inflate(R.layout.fragment_login, container, false)
 
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -1,16 +1,31 @@
 package com.example.myorbitel.utils
 
 import com.example.myorbitel.data.retrofit.api.TariffsApi
+import com.example.myorbitel.utils.Utils.BASE
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
 object RetrofitInstance {
-    val api : TariffsApi by lazy {
+    private val loggingInterceptor = HttpLoggingInterceptor().apply {
+        level = HttpLoggingInterceptor.Level.BODY
+    }
+
+    private val client = OkHttpClient.Builder()
+        .addInterceptor(loggingInterceptor)
+        .build()
+
+    private val retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl(Utils.BASE)
+            .baseUrl(BASE)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
             .build()
-            .create(TariffsApi::class.java)
+    }
+
+    val api: TariffsApi by lazy {
+        retrofit.create(TariffsApi::class.java)
     }
 }

@@ -23,13 +23,16 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
    // private val TAG: String = "AppDebug"
-
+   private lateinit var loadingText: String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+
+        setLoadingText()
 
         binding.btnTopUpBalance.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_topUpBalanceFrag)
@@ -41,6 +44,10 @@ class HomeFragment : Fragment() {
 
         binding.btnProfile.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+        }
+
+        binding.materialCardViewTariffsList.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_tariffListFragment3)
         }
 
         /*
@@ -66,7 +73,7 @@ class HomeFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             try {
-                val contractInfo = contractInfoApi.getContractInfo(16)
+                val contractInfo = contractInfoApi.getContractInfo(19)
                 Timber.tag("MyFragment").d("Попытка получить договор из сети")
 
                 if (contractInfo.isNotEmpty()) {
@@ -77,8 +84,7 @@ class HomeFragment : Fragment() {
                     binding.tvBalanceInfo.text = contract.balance
                     binding.tvTariffName.text = contract.tariff_name
                     binding.tvInternetSpeed.text = contract.speed
-                    binding.tvClientFioFromContract.text = contract.client_fio
-                    binding.tvClientPhoneNumberFromContract.text = contract.client_phone
+                    binding.tvPricePerMonthForTariff.text = contract.price_per_month
                 } else {
                     Timber.tag("MyFragment").e("Получен пустой список договоров")
                 }
@@ -92,6 +98,15 @@ class HomeFragment : Fragment() {
             }
         }
         return binding.root
+    }
+
+    private fun setLoadingText() {
+        loadingText = getString(R.string.loading_text)
+        binding.tvBalanceInfo.text = loadingText
+        binding.tvTariffName.text = loadingText
+        binding.tvInternetSpeed.text = loadingText
+        binding.tvPricePerMonthForTariff.text = loadingText
+
     }
 
     override fun onDestroyView() {

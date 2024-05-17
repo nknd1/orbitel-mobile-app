@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tariffListFragment3"
+            app:destination="@id/tariffListFragment3" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -56,4 +59,9 @@
         android:name="com.example.myorbitel.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/tariffListFragment3"
+        android:name="com.example.myorbitel.TariffListFragment"
+        android:label="fragment_tariff_listf"
+        tools:layout="@layout/fragment_tariff_listf" />
 </navigation>

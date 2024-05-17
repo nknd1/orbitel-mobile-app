@@ -16,19 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".TariffActivity"
-            android:exported="false"
-            android:label="@string/title_activity_tariff"
-            android:theme="@style/Theme.Myorbitel" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ApplicationFormActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Myorbitel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
