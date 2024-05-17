@@ -1,4 +1,4 @@
-package com.example.myorbitel
+package com.example.myorbitel.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,12 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myorbitel.adapters.TariffAdapter
 import com.example.myorbitel.databinding.FragmentTariffListfBinding
-import com.example.myorbitel.utils.RetrofitInstance
 import com.example.myorbitel.viewmodels.TariffViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class TariffListFragment : Fragment() {
 

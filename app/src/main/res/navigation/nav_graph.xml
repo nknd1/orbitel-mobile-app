@@ -61,7 +61,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/tariffListFragment3"
-        android:name="com.example.myorbitel.TariffListFragment"
+        android:name="com.example.myorbitel.presentation.fragments.TariffListFragment"
         android:label="fragment_tariff_listf"
         tools:layout="@layout/fragment_tariff_listf" />
 </navigation>
