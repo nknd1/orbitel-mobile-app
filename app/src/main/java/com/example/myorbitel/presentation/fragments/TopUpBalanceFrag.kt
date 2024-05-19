@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.myorbitel.R
-import com.example.myorbitel.databinding.FragmentHistoryOperationBinding
-import com.example.myorbitel.databinding.FragmentTariffDescriptionBinding
 import com.example.myorbitel.databinding.FragmentTopUpBalanceBinding
 
 

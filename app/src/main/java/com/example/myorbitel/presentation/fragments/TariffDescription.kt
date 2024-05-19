@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.myorbitel.R
-import com.example.myorbitel.databinding.FragmentHistoryOperationBinding
 import com.example.myorbitel.databinding.FragmentTariffDescriptionBinding
 
 

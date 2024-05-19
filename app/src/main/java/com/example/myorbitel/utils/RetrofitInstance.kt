@@ -1,5 +1,6 @@
 package com.example.myorbitel.utils
 
+import com.example.myorbitel.data.retrofit.api.ContractInfoApi
 import com.example.myorbitel.data.retrofit.api.TariffsApi
 import com.example.myorbitel.utils.Utils.BASE
 import okhttp3.OkHttpClient
@@ -27,5 +28,8 @@ object RetrofitInstance {
 
     val api: TariffsApi by lazy {
         retrofit.create(TariffsApi::class.java)
+    }
+    val api_v1: ContractInfoApi by lazy {
+        retrofit.create(ContractInfoApi::class.java)
     }
 }

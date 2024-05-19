@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/transactionHistoryFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -14,9 +14,6 @@
             android:id="@+id/action_homeFragment_to_topUpBalanceFrag"
             app:destination="@id/topUpBalanceFrag" />
         <action
-            android:id="@+id/action_homeFragment_to_historyOperation"
-            app:destination="@id/historyOperation" />
-        <action
             android:id="@+id/action_homeFragment_to_tariffDescription"
             app:destination="@id/tariffDescription" />
         <action
@@ -25,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_tariffListFragment3"
             app:destination="@id/tariffListFragment3" />
+        <action
+            android:id="@+id/action_homeFragment_to_transactionHistoryFragment"
+            app:destination="@id/transactionHistoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -35,11 +35,6 @@
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/historyOperation"
-        android:name="com.example.myorbitel.presentation.fragments.HistoryOperation"
-        android:label="fragment_history_operation"
-        tools:layout="@layout/fragment_history_operation" />
     <fragment
         android:id="@+id/topUpBalanceFrag"
         android:name="com.example.myorbitel.presentation.fragments.TopUpBalanceFrag"
@@ -64,4 +59,9 @@
         android:name="com.example.myorbitel.presentation.fragments.TariffListFragment"
         android:label="fragment_tariff_listf"
         tools:layout="@layout/fragment_tariff_listf" />
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.example.myorbitel.presentation.fragments.TransactionHistoryFragment"
+        android:label="fragment_transaction_history"
+        tools:layout="@layout/fragment_transaction_history" />
 </navigation>

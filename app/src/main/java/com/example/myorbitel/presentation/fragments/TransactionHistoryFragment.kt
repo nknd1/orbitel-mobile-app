@@ -5,33 +5,57 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.myorbitel.R
-import com.example.myorbitel.databinding.FragmentHistoryOperationBinding
-import com.example.myorbitel.databinding.FragmentHomeBinding
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myorbitel.adapters.TransactionAdapter
+import com.example.myorbitel.databinding.FragmentTransactionHistoryBinding
+import com.example.myorbitel.viewmodels.TransactionViewModel
 
 
-class HistoryOperation : Fragment() {
-    private var _binding: FragmentHistoryOperationBinding? = null
+class TransactionHistoryFragment : Fragment() {
+
+    private var _binding: FragmentTransactionHistoryBinding? = null
     private val binding get() = _binding!!
-
-
+    private lateinit var transactionAdapter: TransactionAdapter
+    private lateinit var viewModel: TransactionViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-
-        _binding = FragmentHistoryOperationBinding.inflate(inflater, container, false)
-        //return inflater.inflate(R.layout.fragment_history_operation, container, false)
+    ): View? {
+        _binding = FragmentTransactionHistoryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        viewModel = ViewModelProvider(this).get(TransactionViewModel::class.java)
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        viewModel.transactions.observe(viewLifecycleOwner, Observer { transactions ->
+            transactionAdapter = TransactionAdapter(transactions)
+            binding.recyclerView.adapter = transactionAdapter
+        })
+
+        viewModel.loading.observe(viewLifecycleOwner, Observer { isLoading ->
+            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+            binding.recyclerView.visibility = if (isLoading) View.GONE else View.VISIBLE
+        })
+
+        viewModel.error.observe(viewLifecycleOwner, Observer { errorMessage ->
+            errorMessage?.let {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
+            }
+        })
+
+        viewModel.fetchTransactions()
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }
