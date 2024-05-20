@@ -50,6 +50,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_tariffListFragment3)
         }
 
+
+        binding.materialCardViewvsfs.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_transactionHistoryFragment)
+        }
         /*
         binding.materialCardViewServiceList.setOnClickListener{
 
