@@ -2,8 +2,8 @@ package com.example.myorbitel.models
 
 data class Writeoff(
     val id: Int,
-    val date: String,
-    val time: String,
+    val date_writeoffs: String,
+    val time_writeoffs: String,
     val amount: Double,
     val reason: String,
     val contractId: Int
@@ -12,8 +12,8 @@ data class Writeoff(
 
 data class Deposit(
     val id: Int,
-    val date: String,
-    val time: String,
+    val date_deposits: String,
+    val time_deposits: String,
     val amount: Double,
     val contractId: Int
 )

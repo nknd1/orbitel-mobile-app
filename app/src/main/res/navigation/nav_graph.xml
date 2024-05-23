@@ -14,9 +14,6 @@
             android:id="@+id/action_homeFragment_to_topUpBalanceFrag"
             app:destination="@id/topUpBalanceFrag" />
         <action
-            android:id="@+id/action_homeFragment_to_tariffDescription"
-            app:destination="@id/tariffDescription" />
-        <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
@@ -25,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_transactionHistoryFragment"
             app:destination="@id/transactionHistoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_serviceListFragment2"
+            app:destination="@id/serviceListFragment2" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -41,15 +41,6 @@
         android:label="fragment_top_up_balance"
         tools:layout="@layout/fragment_top_up_balance" />
     <fragment
-        android:id="@+id/tariffDescription"
-        android:name="com.example.myorbitel.presentation.fragments.TariffDescription"
-        android:label="fragment_tariff_description"
-        tools:layout="@layout/fragment_tariff_description" >
-        <action
-            android:id="@+id/action_tariffDescription_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.myorbitel.ProfileFragment"
         android:label="fragment_profile"
@@ -64,4 +55,9 @@
         android:name="com.example.myorbitel.presentation.fragments.TransactionHistoryFragment"
         android:label="fragment_transaction_history"
         tools:layout="@layout/fragment_transaction_history" />
+    <fragment
+        android:id="@+id/serviceListFragment2"
+        android:name="com.example.myorbitel.presentation.fragments.ServiceListFragment"
+        android:label="fragment_service_list"
+        tools:layout="@layout/fragment_service_list" />
 </navigation>

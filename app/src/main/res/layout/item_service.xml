@@ -17,20 +17,20 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tariffName"
+            android:id="@+id/serviceName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tariffPrice"
+            android:id="@+id/serviceFeature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tariffSpeed"
+            android:id="@+id/servicePrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp" />

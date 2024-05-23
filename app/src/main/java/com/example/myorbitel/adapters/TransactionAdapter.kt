@@ -13,9 +13,9 @@ class TransactionAdapter(private val transactions: List<Transaction>) : Recycler
         fun bind(transaction: Transaction) {
             when (transaction) {
                 is Transaction.WriteOffTransaction -> {
-                    binding.transactionType.text = "Списания "
-                    binding.transactionDate.text = transaction.writeoff.date
-                    binding.transactionTime.text = transaction.writeoff.time
+                    binding.transactionType.text = "Списание"
+                    binding.transactionDate.text = transaction.writeoff.date_writeoffs
+                    binding.transactionTime.text = transaction.writeoff.time_writeoffs
                     "Сумма -: ${transaction.writeoff.amount}".also { binding.transactionAmount.text = it }
                     binding.transactionReason.apply {
                         visibility = View.VISIBLE
@@ -23,9 +23,9 @@ class TransactionAdapter(private val transactions: List<Transaction>) : Recycler
                     }
                 }
                 is Transaction.DepositTransaction -> {
-                    binding.transactionType.text = "Пополнения"
-                    binding.transactionDate.text = transaction.deposit.date
-                    binding.transactionTime.text = transaction.deposit.time
+                    binding.transactionType.text = "Пополнение"
+                    binding.transactionDate.text = transaction.deposit.date_deposits
+                    binding.transactionTime.text = transaction.deposit.time_deposits
                     "Сумма +: ${transaction.deposit.amount}".also { binding.transactionAmount.text = it }
                     binding.transactionReason.visibility = View.GONE
                 }

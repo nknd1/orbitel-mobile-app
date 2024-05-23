@@ -38,9 +38,7 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_topUpBalanceFrag)
         }
 
-        binding.materialCardViewTariff.setOnClickListener{
-            findNavController().navigate(R.id.action_homeFragment_to_tariffDescription)
-        }
+
 
         binding.btnProfile.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
@@ -54,13 +52,14 @@ class HomeFragment : Fragment() {
         binding.materialCardViewvsfs.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_transactionHistoryFragment)
         }
-        /*
-        binding.materialCardViewServiceList.setOnClickListener{
 
+
+        binding.materialCardViewServiceList.setOnClickListener{
+                findNavController().navigate(R.id.action_homeFragment_to_serviceListFragment2)
         }
 
 
-         */
+
 
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
@@ -85,10 +84,10 @@ class HomeFragment : Fragment() {
                         contractInfo[0] // Предполагается, что возвращается только один договор
                     Timber.tag("MyFragment")
                         .d("Информация о договоре успешно получена: %s", contract.contract_number)
+
+                    "Лицевой счёт: ${contract.personal_account}".also { binding.tvPersonalAccount.text= it }
+                    "Адрес подключения: ${contract.connect_address}".also { binding.tvConnectAddress.text= it }
                     binding.tvBalanceInfo.text = contract.balance
-                    binding.tvTariffName.text = contract.tariff_name
-                    binding.tvInternetSpeed.text = contract.speed
-                    binding.tvPricePerMonthForTariff.text = contract.price_per_month
                 } else {
                     Timber.tag("MyFragment").e("Получен пустой список договоров")
                 }
@@ -107,10 +106,6 @@ class HomeFragment : Fragment() {
     private fun setLoadingText() {
         loadingText = getString(R.string.loading_text)
         binding.tvBalanceInfo.text = loadingText
-        binding.tvTariffName.text = loadingText
-        binding.tvInternetSpeed.text = loadingText
-        binding.tvPricePerMonthForTariff.text = loadingText
-
     }
 
     override fun onDestroyView() {

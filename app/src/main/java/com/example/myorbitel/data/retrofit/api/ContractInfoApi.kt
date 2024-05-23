@@ -2,7 +2,13 @@ package com.example.myorbitel.data.retrofit.api
 
 import com.example.myorbitel.models.ContractInformation
 import com.example.myorbitel.models.Deposit
+import com.example.myorbitel.models.TopUpRequest
+import com.example.myorbitel.models.TopUpResponse
 import com.example.myorbitel.models.Writeoff
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -23,4 +29,7 @@ interface ContractInfoApi {
 
     @GET("contracts/deposit")
     suspend fun getDeposits(): List<Deposit>
+
+    @POST("contracts/top-up")
+    fun topUpBalance(@Body request: TopUpRequest): Call<TopUpResponse>
 }

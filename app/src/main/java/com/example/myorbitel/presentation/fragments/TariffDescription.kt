@@ -21,9 +21,7 @@ class TariffDescription : Fragment() {
         _binding = FragmentTariffDescriptionBinding.inflate(inflater, container, false)
         //return inflater.inflate(R.layout.fragment_history_operation, container, false)
 
-        binding.btnBackTo.setOnClickListener {
-            findNavController().navigate(R.id.action_tariffDescription_to_homeFragment)
-        }
+
         return binding.root
     }
 
