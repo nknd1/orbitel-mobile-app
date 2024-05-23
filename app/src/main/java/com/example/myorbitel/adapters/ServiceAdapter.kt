@@ -6,13 +6,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myorbitel.databinding.ItemServiceBinding
 import com.example.myorbitel.models.Services
 
-class ServiceAdapter(private val services: List<Services>) : RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>() {
+class ServiceAdapter(
+
+    private val services: List<Services>,
+    private val onAddClick: (Services) -> Unit
+
+
+
+) : RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>() {
 
     inner class ServiceViewHolder(val binding: ItemServiceBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(services: Services){
             "Название: ${services.service_name}".also { binding.serviceName.text = it }
             "Описание: ${services.feature}".also { binding.serviceFeature.text = it }
             "Стоимость: ${services.price} руб. ".also { binding.servicePrice.text = it }
+            binding.btnAddService.setOnClickListener { onAddClick(services) }
         }
     }
 

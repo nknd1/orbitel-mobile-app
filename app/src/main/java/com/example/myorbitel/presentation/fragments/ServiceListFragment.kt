@@ -1,5 +1,6 @@
 package com.example.myorbitel.presentation.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +20,7 @@ class ServiceListFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var serviceAdapter: ServiceAdapter
     private lateinit var viewModel: ServiceViewModel
-
+    private var selectedTariffId: Int = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +38,7 @@ class ServiceListFragment : Fragment() {
 
 
         viewModel.services.observe(viewLifecycleOwner, Observer { services ->
-            serviceAdapter = ServiceAdapter(services)
+            serviceAdapter = ServiceAdapter(services) { service -> viewModel.addServiceToTariff(service.service_id, selectedTariffId) }
             binding.recyclerView.adapter = serviceAdapter
         })
 
@@ -52,10 +53,24 @@ class ServiceListFragment : Fragment() {
             }
         })
 
+        viewModel.addServiceResponse.observe(viewLifecycleOwner, Observer { message ->
+            message?.let {
+                showSuccessDialog(it)
+            }
+        })
+
         viewModel.fetchServices()
     }
 
-
+    private fun showSuccessDialog(message: String) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Успех")
+            .setMessage(message)
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
     /*
     private fun fetchTariffs() {
         CoroutineScope(Dispatchers.IO).launch {
