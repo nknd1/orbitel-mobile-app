@@ -20,7 +20,7 @@ class ServiceListFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var serviceAdapter: ServiceAdapter
     private lateinit var viewModel: ServiceViewModel
-    private var selectedTariffId: Int = 1
+    private var selectedTariffId: Int = 2
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

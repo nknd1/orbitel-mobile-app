@@ -58,7 +58,9 @@ class HomeFragment : Fragment() {
                 findNavController().navigate(R.id.action_homeFragment_to_serviceListFragment2)
         }
 
-
+        binding.materialCardViewMyTariff.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_tariffDetailsFragment)
+        }
 
 
         val interceptor = HttpLoggingInterceptor()
@@ -76,7 +78,7 @@ class HomeFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             try {
-                val contractInfo = contractInfoApi.getContractInfo(19)
+                val contractInfo = contractInfoApi.getContractInfo(22)
                 Timber.tag("MyFragment").d("Попытка получить договор из сети")
 
                 if (contractInfo.isNotEmpty()) {

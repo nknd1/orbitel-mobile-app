@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Профиль"
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_person"/>
+    <item android:title="Тарифы"
+        android:id="@+id/tariffs"
+        android:icon="@drawable/ic_tariff"/>
+    <item android:title="Услуги"
+        android:id="@+id/services"
+        android:icon="@drawable/ic_service"/>
+</menu>

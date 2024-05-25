@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_homeFragment_to_serviceListFragment2"
             app:destination="@id/serviceListFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_tariffDetailsFragment"
+            app:destination="@id/tariffDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -60,4 +63,9 @@
         android:name="com.example.myorbitel.presentation.fragments.ServiceListFragment"
         android:label="fragment_service_list"
         tools:layout="@layout/fragment_service_list" />
+    <fragment
+        android:id="@+id/tariffDetailsFragment"
+        android:name="com.example.myorbitel.TariffDetailsFragment"
+        android:label="fragment_tariff_details"
+        tools:layout="@layout/fragment_tariff_details" />
 </navigation>

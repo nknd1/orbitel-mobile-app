@@ -32,7 +32,7 @@ class TransactionHistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(TransactionViewModel::class.java)
+        viewModel = ViewModelProvider(this)[TransactionViewModel::class.java]
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel.transactions.observe(viewLifecycleOwner, Observer { transactions ->

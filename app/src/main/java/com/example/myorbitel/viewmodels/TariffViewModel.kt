@@ -3,6 +3,7 @@ package com.example.myorbitel.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.myorbitel.models.TariffDetailsResponse
 import com.example.myorbitel.models.Tariffs
 import com.example.myorbitel.utils.RetrofitInstance
 import kotlinx.coroutines.CoroutineScope
@@ -19,6 +20,8 @@ class TariffViewModel : ViewModel() {
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> get() = _error
+    private val _tariffDetails = MutableLiveData<TariffDetailsResponse>()
+    val tariffDetails: LiveData<TariffDetailsResponse> get() = _tariffDetails
 
     fun fetchTariffs() {
         _loading.value = true
@@ -27,6 +30,28 @@ class TariffViewModel : ViewModel() {
                 val response = RetrofitInstance.api.getAllTariffs()
                 withContext(Dispatchers.Main) {
                     _tariffs.value = response
+                    _loading.value = false
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                withContext(Dispatchers.Main) {
+                    _error.value = "Error: ${e.message}"
+                    _loading.value = false
+                }
+            }
+        }
+    }
+    fun fetchTariffDetails(tariffId: Int) {
+        _loading.value = true
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = RetrofitInstance.api.getTariffDetails(tariffId).execute()
+                withContext(Dispatchers.Main) {
+                    if (response.isSuccessful) {
+                        _tariffDetails.value = response.body()
+                    } else {
+                        _error.value = "Error: ${response.errorBody()?.string()}"
+                    }
                     _loading.value = false
                 }
             } catch (e: Exception) {

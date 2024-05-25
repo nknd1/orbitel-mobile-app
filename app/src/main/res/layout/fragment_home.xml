@@ -8,34 +8,18 @@
     android:layout_height="match_parent"
     android:background="@color/gray"
     tools:context=".presentation.fragments.home.HomeFragment">
-    <LinearLayout
-        android:id="@+id/linear_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Личный кабинет"
-            android:textStyle="bold"
-            android:textSize="@dimen/_20ssp" />
-    </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView37"
-        android:layout_width="@dimen/_250sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_width="@dimen/_300sdp"
         android:layout_height="@dimen/_80sdp"
-        android:layout_marginTop="30dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:cardElevation="@dimen/_8sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear_header">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -75,8 +59,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:textSize="@dimen/_8ssp"
                 android:text="Test test test test"
+                android:textSize="@dimen/_8ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tvPersonalAccount"
                 app:layout_constraintHorizontal_bias="0.0"
