@@ -57,6 +57,7 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="loading_text">…</string>
+    <string name="title_activity_login">LoginActivity</string>
 
 
     <!--  -->

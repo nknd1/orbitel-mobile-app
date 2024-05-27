@@ -2,8 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    android:id="@+id/nav_graph">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -13,9 +12,6 @@
         <action
             android:id="@+id/action_homeFragment_to_topUpBalanceFrag"
             app:destination="@id/topUpBalanceFrag" />
-        <action
-            android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
         <action
             android:id="@+id/action_homeFragment_to_tariffListFragment3"
             app:destination="@id/tariffListFragment3" />
@@ -30,24 +26,10 @@
             app:destination="@id/tariffDetailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.myorbitel.presentation.fragments.auth.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/topUpBalanceFrag"
         android:name="com.example.myorbitel.presentation.fragments.TopUpBalanceFrag"
         android:label="fragment_top_up_balance"
         tools:layout="@layout/fragment_top_up_balance" />
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.myorbitel.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/tariffListFragment3"
         android:name="com.example.myorbitel.presentation.fragments.TariffListFragment"

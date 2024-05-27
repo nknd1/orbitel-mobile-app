@@ -36,7 +36,7 @@ class TariffDetailsFragment : Fragment() {
         viewModel = ViewModelProvider(this)[TariffViewModel::class.java]
 
         viewModel.tariffDetails.observe(viewLifecycleOwner, Observer { details ->
-            details?.let {
+            details?.let { it ->
                 binding.tariffName.text = it.tariff.tariff_name
                 "Price: ${it.tariff.price_per_month}".also { binding.tariffPrice.text = it }
                 "Speed: ${it.tariff.speed}".also { binding.tariffSpeed.text = it }

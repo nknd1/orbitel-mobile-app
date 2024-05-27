@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primary">#2196F3</color>
+    <color name="DarkGray">#A9A9A9</color>
     <color name="accent">#f52c56</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#E5E4E2</color>
-    <color name="DarkGray">#A9A9A9</color>
-    
-    
+    <color name="active_icon_color">#2196F3</color> <!-- Цвет активной иконки -->
+    <color name="inactive_icon_color">#A9A9A9</color> <!-- Цвет неактивной иконки -->
+
+    <color name="nav_item_color">#A9A9A9</color>
+    <color name="nav_item_color_selected">#2196F3</color>
+
     <color name="g_black">#33405f</color>
 </resources>
