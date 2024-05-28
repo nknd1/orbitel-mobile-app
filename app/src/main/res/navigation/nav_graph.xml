@@ -2,7 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -50,4 +51,18 @@
         android:name="com.example.myorbitel.TariffDetailsFragment"
         android:label="fragment_tariff_details"
         tools:layout="@layout/fragment_tariff_details" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myorbitel.presentation.fragments.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_clientInfoFragment"
+            app:destination="@id/clientInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clientInfoFragment"
+        android:name="com.example.myorbitel.presentation.fragments.ClientInfoFragment"
+        android:label="fragment_client_info"
+        tools:layout="@layout/fragment_client_info" />
 </navigation>

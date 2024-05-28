@@ -1,6 +1,6 @@
 package com.example.myorbitel.service.auth
-
-import com.example.myorbitel.models.Auth
+/*
+import com.example.myorbitel.models.LoginRequest
 import com.example.myorbitel.models.LoginResponse
 import retrofit2.Response
 import retrofit2.http.Body
@@ -11,7 +11,7 @@ import retrofit2.http.POST
 interface AuthApiService {
     @POST("auth/login")
     suspend fun login(
-        @Body auth: Auth,
+        @Body auth: LoginRequest,
     ): Response<LoginResponse>
 
     @GET("auth/refresh")
@@ -19,3 +19,5 @@ interface AuthApiService {
         @Header("Authorization") token: String,
     ): Response<LoginResponse>
 }
+
+ */

@@ -37,8 +37,8 @@
                     android:id="@+id/personalAccountET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Лицевой счёт"
-                    android:inputType="text"
+                    android:hint="Номер телефона"
+                    android:inputType="phone"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="12dp" />
             </com.google.android.material.textfield.TextInputLayout>

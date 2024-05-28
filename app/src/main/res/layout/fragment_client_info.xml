@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Balance:" />
+
+        <TextView
+            android:id="@+id/tvClientAddressRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Client Address Registration:" />
+
+        <TextView
+            android:id="@+id/tvClientFio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Client FIO:" />
+
+        <TextView
+            android:id="@+id/tvClientId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Client ID:" />
+
+        <TextView
+            android:id="@+id/tvClientPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Client Phone:" />
+
+        <TextView
+            android:id="@+id/tvConnectAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect Address:" />
+
+        <TextView
+            android:id="@+id/tvContractClientId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contract Client ID:" />
+
+        <TextView
+            android:id="@+id/tvContractId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contract ID:" />
+
+        <TextView
+            android:id="@+id/tvContractNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contract Number:" />
+
+        <TextView
+            android:id="@+id/tvCreatedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Created At:" />
+
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password:" />
+
+        <TextView
+            android:id="@+id/tvPersonalAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal Account:" />
+
+        <TextView
+            android:id="@+id/tvTypeId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Type ID:" />
+
+        <TextView
+            android:id="@+id/tvUpdatedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Updated At:" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,19 +1,30 @@
 package com.example.myorbitel.viewmodels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import com.example.myorbitel.models.AuthRequest
+import com.example.myorbitel.network.LoginResult
+import com.example.myorbitel.utils.RetrofitInstance
 
+/*
 class LoginViewModel : ViewModel() {
-    private val _navigateToHomeFrag = MutableLiveData<Boolean>()
-    val navigateToHomeFrag: LiveData<Boolean>
-        get() = _navigateToHomeFrag
+    private val apiService = RetrofitInstance.apiService
 
-    fun navigateToHomeFrag(){
-        _navigateToHomeFrag.value = true
-    }
-
-    fun onNavigateToHomeFrag(){
-        _navigateToHomeFrag.value = false
+    fun login(authRequest: AuthRequest) = liveData {
+        try {
+            val response = apiService.login(authRequest)
+            if (response.isSuccessful) {
+                emit(LoginResult.Success(response.body()?.token ?: ""))
+            } else {
+                emit(LoginResult.Error("Login failed"))
+            }
+        } catch (e: Exception) {
+            emit(LoginResult.Error(e.message ?: "Unknown error"))
+        }
     }
 }
+
+
+
+
+ */

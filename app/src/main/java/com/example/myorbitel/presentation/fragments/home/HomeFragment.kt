@@ -39,11 +39,6 @@ class HomeFragment : Fragment() {
         }
 
 
-
-        binding.btnProfile.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
-        }
-
         binding.materialCardViewTariffsList.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_tariffListFragment3)
         }
@@ -88,7 +83,7 @@ class HomeFragment : Fragment() {
                         .d("Информация о договоре успешно получена: %s", contract.contract_number)
 
                     "Лицевой счёт: ${contract.personal_account}".also { binding.tvPersonalAccount.text= it }
-                    "Адрес подключения: ${contract.connect_address}".also { binding.tvConnectAddress.text= it }
+                   // "Адрес подключения: ${contract.connect_address}".also { binding.tvConnectAddress.text= it }
                     binding.tvBalanceInfo.text = contract.balance
                 } else {
                     Timber.tag("MyFragment").e("Получен пустой список договоров")

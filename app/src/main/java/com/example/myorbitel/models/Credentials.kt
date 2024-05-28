@@ -2,7 +2,6 @@ package com.example.myorbitel.models
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginResponse(
-    @SerializedName("token")
-    val token: String
-)
+data class LoginRequest(val client_phone: String, val password: String)
+
+
