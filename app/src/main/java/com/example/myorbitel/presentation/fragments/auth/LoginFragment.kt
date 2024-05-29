@@ -90,13 +90,20 @@ class LoginFragment : Fragment() {
             val phone = binding.personalAccountET.text.toString()
             val password = binding.passwordEt.text.toString()
             viewModel.login(AuthRequest(phone, password))
+            binding.personalAccountET.setText("+7")
+
+            // Если вы хотите, чтобы курсор автоматически перемещался в конец строки после установки значения,
+            // используйте следующий код:
+            binding.personalAccountET.text?.let { it1 -> binding.personalAccountET.setSelection(it1.length) }
         }
 
         viewModel.token.observe(viewLifecycleOwner) {
             it?.let {
                 findNavController().navigate(R.id.action_loginFragment_to_clientInfoFragment)
+
             }
         }
+
     }
 
     override fun onDestroyView() {

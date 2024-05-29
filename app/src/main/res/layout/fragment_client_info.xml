@@ -1,97 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gray">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linear_header"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvBalance"
-            android:layout_width="match_parent"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Balance:" />
-
-        <TextView
-            android:id="@+id/tvClientAddressRegistration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Client Address Registration:" />
-
-        <TextView
-            android:id="@+id/tvClientFio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Client FIO:" />
-
-        <TextView
-            android:id="@+id/tvClientId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Client ID:" />
-
-        <TextView
-            android:id="@+id/tvClientPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Client Phone:" />
-
-        <TextView
-            android:id="@+id/tvConnectAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Connect Address:" />
-
-        <TextView
-            android:id="@+id/tvContractClientId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Contract Client ID:" />
-
-        <TextView
-            android:id="@+id/tvContractId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Contract ID:" />
-
-        <TextView
-            android:id="@+id/tvContractNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Contract Number:" />
-
-        <TextView
-            android:id="@+id/tvCreatedAt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Created At:" />
-
-        <TextView
-            android:id="@+id/tvPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password:" />
-
-        <TextView
-            android:id="@+id/tvPersonalAccount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Personal Account:" />
-
-        <TextView
-            android:id="@+id/tvTypeId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Type ID:" />
-
-        <TextView
-            android:id="@+id/tvUpdatedAt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Updated At:" />
-
+            android:text="Профиль"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.072"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
-</ScrollView>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/linear_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="@dimen/_8sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/tvClientAddressRegistration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Client Address Registration:"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvClientFio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Client FIO:"
+                        app:layout_constraintEnd_toEndOf="@+id/tvClientAddressRegistration"
+                        app:layout_constraintStart_toStartOf="@+id/tvClientAddressRegistration"
+                        app:layout_constraintTop_toBottomOf="@+id/tvClientAddressRegistration" />
+
+                    <TextView
+                        android:id="@+id/tvClientId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Client ID:"
+                        app:layout_constraintEnd_toEndOf="@+id/tvClientFio"
+                        app:layout_constraintStart_toStartOf="@+id/tvClientFio"
+                        app:layout_constraintTop_toBottomOf="@+id/tvClientFio" />
+
+                    <TextView
+                        android:id="@+id/tvClientPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Client Phone:"
+                        app:layout_constraintEnd_toEndOf="@+id/tvClientId"
+                        app:layout_constraintStart_toStartOf="@+id/tvClientId"
+                        app:layout_constraintTop_toBottomOf="@+id/tvClientId" />
+
+                    <TextView
+                        android:id="@+id/tvTypeId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Type ID:"
+                        app:layout_constraintEnd_toEndOf="@+id/tvClientPhone"
+                        app:layout_constraintStart_toStartOf="@+id/tvClientPhone"
+                        app:layout_constraintTop_toBottomOf="@+id/tvClientPhone" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewContracts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

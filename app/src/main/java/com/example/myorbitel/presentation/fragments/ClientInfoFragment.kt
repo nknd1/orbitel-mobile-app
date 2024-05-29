@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myorbitel.R
+import com.example.myorbitel.adapters.ContractsAdapter
 import com.example.myorbitel.databinding.FragmentClientInfoBinding
 import com.example.myorbitel.viewmodels.AuthViewModel
 
@@ -15,6 +17,7 @@ class ClientInfoFragment : Fragment() {
     private lateinit var viewModel: AuthViewModel
     private var _binding: FragmentClientInfoBinding? = null
     private val binding get() = _binding!!
+    private lateinit var adapter: ContractsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,28 +30,31 @@ class ClientInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
-
+        setupRecyclerView()
         viewModel.getClientInfo()
+        viewModel.getContracts()
 
         viewModel.clientInfo.observe(viewLifecycleOwner) { clientInfo ->
             clientInfo?.let {
-                binding.tvBalance.text = "Balance: ${it.balance}"
-                binding.tvClientAddressRegistration.text = "Client Address Registration: ${it.client_address_registration}"
-                binding.tvClientFio.text = "Client FIO: ${it.client_fio}"
-                binding.tvClientId.text = "Client ID: ${it.client_id}"
-                binding.tvClientPhone.text = "Client Phone: ${it.client_phone}"
-                binding.tvConnectAddress.text = "Connect Address: ${it.connect_address}"
-                binding.tvContractClientId.text = "Contract Client ID: ${it.contract_client_id}"
-                binding.tvContractId.text = "Contract ID: ${it.contract_id}"
-                binding.tvContractNumber.text = "Contract Number: ${it.contract_number}"
-                binding.tvCreatedAt.text = "Created At: ${it.created_at}"
-                binding.tvPassword.text = "Password: ${it.password}"
-                binding.tvPersonalAccount.text = "Personal Account: ${it.personal_account}"
-                binding.tvTypeId.text = "Type ID: ${it.type_id}"
-                binding.tvUpdatedAt.text = "Updated At: ${it.updated_at}"
+                binding.tvClientId.text = "ID: ${it.client_id}"
+                binding.tvClientAddressRegistration.text = "Адрес регистрации: ${it.client_address_registration}"
+                binding.tvClientFio.text = "фио: ${it.client_fio}"
+                binding.tvClientPhone.text = "Номер телефона: ${it.client_phone}"
+                binding.tvTypeId.text = "Тип клиента: ${it.client_type}"
+            }
+        }
+        viewModel.contracts.observe(viewLifecycleOwner) { contracts ->
+            contracts?.let {
+                adapter = ContractsAdapter(it)
+                binding.recyclerViewContracts.adapter = adapter
             }
         }
     }
+
+    private fun setupRecyclerView() {
+        binding.recyclerViewContracts.layoutManager = LinearLayoutManager(requireContext())
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

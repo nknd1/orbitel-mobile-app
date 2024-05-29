@@ -1,9 +1,9 @@
 package com.example.myorbitel.network
 
 
-import androidx.lifecycle.LiveData
 import com.example.myorbitel.models.AuthRequest
 import com.example.myorbitel.models.ClientInfo
+import com.example.myorbitel.models.ContractInfo
 import com.example.myorbitel.models.LoginResponse
 import retrofit2.Response
 import retrofit2.http.Body
@@ -18,4 +18,7 @@ interface ApiService {
 
     @GET("clients/info")
     suspend fun getClientInfo(@Header("Authorization") token: String): Response<ClientInfo>
+
+    @GET("clients/contract")
+    suspend fun getContracts(@Header("Authorization") token: String): Response<List<ContractInfo>>
 }

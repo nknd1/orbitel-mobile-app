@@ -40,7 +40,9 @@
                     android:hint="Номер телефона"
                     android:inputType="phone"
                     android:paddingHorizontal="8dp"
-                    android:paddingVertical="12dp" />
+                    android:paddingVertical="12dp"
+                    android:digits="0123456789+"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout

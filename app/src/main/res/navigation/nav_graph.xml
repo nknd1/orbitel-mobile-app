@@ -3,54 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splashFragment">
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.myorbitel.presentation.fragments.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_topUpBalanceFrag"
-            app:destination="@id/topUpBalanceFrag" />
-        <action
-            android:id="@+id/action_homeFragment_to_tariffListFragment3"
-            app:destination="@id/tariffListFragment3" />
-        <action
-            android:id="@+id/action_homeFragment_to_transactionHistoryFragment"
-            app:destination="@id/transactionHistoryFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_serviceListFragment2"
-            app:destination="@id/serviceListFragment2" />
-        <action
-            android:id="@+id/action_homeFragment_to_tariffDetailsFragment"
-            app:destination="@id/tariffDetailsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/topUpBalanceFrag"
-        android:name="com.example.myorbitel.presentation.fragments.TopUpBalanceFrag"
-        android:label="fragment_top_up_balance"
-        tools:layout="@layout/fragment_top_up_balance" />
-    <fragment
-        android:id="@+id/tariffListFragment3"
-        android:name="com.example.myorbitel.presentation.fragments.TariffListFragment"
-        android:label="fragment_tariff_listf"
-        tools:layout="@layout/fragment_tariff_listf" />
-    <fragment
-        android:id="@+id/transactionHistoryFragment"
-        android:name="com.example.myorbitel.presentation.fragments.TransactionHistoryFragment"
-        android:label="fragment_transaction_history"
-        tools:layout="@layout/fragment_transaction_history" />
-    <fragment
-        android:id="@+id/serviceListFragment2"
-        android:name="com.example.myorbitel.presentation.fragments.ServiceListFragment"
-        android:label="fragment_service_list"
-        tools:layout="@layout/fragment_service_list" />
-    <fragment
-        android:id="@+id/tariffDetailsFragment"
-        android:name="com.example.myorbitel.TariffDetailsFragment"
-        android:label="fragment_tariff_details"
-        tools:layout="@layout/fragment_tariff_details" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.myorbitel.presentation.fragments.auth.LoginFragment"
@@ -58,11 +12,26 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_clientInfoFragment"
-            app:destination="@id/clientInfoFragment" />
+            app:destination="@id/clientInfoFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
+            />
     </fragment>
     <fragment
         android:id="@+id/clientInfoFragment"
         android:name="com.example.myorbitel.presentation.fragments.ClientInfoFragment"
         android:label="fragment_client_info"
-        tools:layout="@layout/fragment_client_info" />
+        tools:layout="@layout/fragment_client_info"
+        />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.myorbitel.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 </navigation>

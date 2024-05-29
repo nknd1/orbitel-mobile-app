@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
 
 
         setLoadingText()
-
+        /*
         binding.btnTopUpBalance.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_topUpBalanceFrag)
         }
@@ -56,6 +56,8 @@ class HomeFragment : Fragment() {
         binding.materialCardViewMyTariff.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_tariffDetailsFragment)
         }
+
+         */
 
 
         val interceptor = HttpLoggingInterceptor()

@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.myorbitel.models.AuthRequest
 import com.example.myorbitel.models.ClientInfo
+import com.example.myorbitel.models.ContractInfo
 import com.example.myorbitel.utils.RetrofitInstance
 import com.example.myorbitel.utils.RetrofitInstance.getToken
 import com.example.myorbitel.utils.RetrofitInstance.saveToken
@@ -20,8 +21,12 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
     private val TAG = "AuthViewModel:"
 
     private val _clientInfo = MutableLiveData<ClientInfo>()
+
     val clientInfo: LiveData<ClientInfo> get() = _clientInfo
 
+
+    private val _contracts = MutableLiveData<List<ContractInfo>>()
+    val contracts: LiveData<List<ContractInfo>> get() = _contracts
     private val context = application.applicationContext
 
     fun login(authRequest: AuthRequest) = viewModelScope.launch {
@@ -54,6 +59,25 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
                 }
             } catch (e: Exception) {
                 Log.d(TAG, "Exception during fetching client info: ${e.message}")
+            }
+        } ?: run {
+            Log.d(TAG, "Token is null")
+        }
+    }
+    fun getContracts() = viewModelScope.launch {
+        val token = getToken(context)
+        token?.let {
+            try {
+                val response = RetrofitInstance.apiService.getContracts("Bearer $it")
+                if (response.isSuccessful) {
+                    response.body()?.let { it ->
+                        _contracts.value = it
+                    }
+                } else {
+                    Log.e(TAG, "Fetching contracts failed: ${response.errorBody()?.string()}")
+                }
+            } catch (e: Exception) {
+                Log.d(TAG, "Exception during fetching contracts: ${e.message}")
             }
         } ?: run {
             Log.d(TAG, "Token is null")
