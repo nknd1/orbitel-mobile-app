@@ -1,7 +1,7 @@
 package com.example.myorbitel.models
 
 data class ContractInfo(
-    val id: String,
+    val contract_id: String,
     val connect_address: String,
     val balance: String,
     val contract_number: String,

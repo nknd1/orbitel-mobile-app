@@ -32,7 +32,7 @@
                 android:id="@+id/editTextContractId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contract ID" />
+                android:hint="Номер договора" />
 
             <EditText
                 android:id="@+id/editTextBalance"
@@ -50,7 +50,7 @@
                     android:id="@+id/buttonTopUp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Top Up" />
+                    android:text="Пополнить" />
 
                 <ProgressBar
                     android:id="@+id/progressBar"
