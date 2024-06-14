@@ -6,15 +6,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myorbitel.databinding.ItemContractBinding
 import com.example.myorbitel.models.ContractInfo
 
-class ContractsAdapter(private val contracts: List<ContractInfo>) :
+class ContractsAdapter(private val contracts: List<ContractInfo>, private val onContractClick: (String) -> Unit) :
     RecyclerView.Adapter<ContractsAdapter.ContractViewHolder>() {
     inner class ContractViewHolder(val binding: ItemContractBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(contract: ContractInfo) {
-            binding.tvContractId.text = "Contract ID: ${contract.contract_id}"
-            binding.tvConnectAddress.text = "Address: ${contract.connect_address}"
-            binding.tvBalance.text = "Balance: ${contract.balance}"
-            binding.tvContractNumber.text = "Number: ${contract.contract_number}"
-            binding.tvPersonalAccount.text = "Account: ${contract.personal_account}"
+            binding.tvContractId.text = "ID: ${contract.contract_id}"
+            binding.tvConnectAddress.text = "Адрес подключения: ${contract.connect_address}"
+            binding.tvBalance.text = "Текущий балнас: ${contract.balance}"
+            binding.tvContractNumber.text = "Номер договора: ${contract.contract_number}"
+            binding.tvPersonalAccount.text = "Лицевой счёт: ${contract.personal_account}"
+            binding.root.setOnClickListener {
+                onContractClick(contract.contract_id)
+            }
         }
     }
 

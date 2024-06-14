@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -25,7 +26,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -42,8 +43,8 @@ android {
 }
 
 dependencies {
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
@@ -59,6 +60,7 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.fragment:fragment:1.7.1")
 
+    @Suppress("ktlint:standard:property-naming")
     val fragment_version = "1.7.1"
     implementation("androidx.fragment:fragment-ktx:$fragment_version")
     testImplementation("junit:junit:4.13.2")
@@ -68,41 +70,36 @@ dependencies {
     testImplementation("org.mockito:mockito-core:5.11.0")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
 
-
-
+    @Suppress("ktlint:standard:property-naming")
     val nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
 
+    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
+    implementation("com.intuit.ssp:ssp-android:1.1.0")
+    implementation("com.intuit.sdp:sdp-android:1.1.0")
 
+    implementation("com.jakewharton.timber:timber:5.0.1")
 
-    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
-    implementation ("com.intuit.ssp:ssp-android:1.1.0")
-    implementation ("com.intuit.sdp:sdp-android:1.1.0")
-
-
-
-    implementation ("com.jakewharton.timber:timber:5.0.1")
-
+    @Suppress("ktlint:standard:property-naming")
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
-      // optional - Kotlin Extensions and Coroutines support for Room
+    // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
 
-    //splash screen
+    // splash screen
     implementation("androidx.core:core-splashscreen:1.0.1")
 
-
-    //hilt
+    // hilt
+    @Suppress("ktlint:standard:property-naming")
     val hilt_version = "2.51"
-    implementation ("com.google.dagger:hilt-android:$hilt_version")
-    kapt ("com.google.dagger:hilt-compiler:$hilt_version")
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    kapt("com.google.dagger:hilt-compiler:$hilt_version")
 
-
-    //data store
+    // data store
     implementation("androidx.datastore:datastore-preferences:1.1.1")
 }

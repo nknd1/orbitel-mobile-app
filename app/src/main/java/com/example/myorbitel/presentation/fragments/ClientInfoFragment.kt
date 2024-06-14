@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myorbitel.adapters.ContractsAdapter
 import com.example.myorbitel.databinding.FragmentClientInfoBinding
@@ -49,7 +50,11 @@ class ClientInfoFragment : Fragment() {
         }
         viewModel.contracts.observe(viewLifecycleOwner) { contracts ->
             contracts?.let {
-                adapter = ContractsAdapter(it)
+                adapter =
+                    ContractsAdapter(contracts) { contractId ->
+                        val action = ClientInfoFragmentDirections.actionClientInfoFragmentToContractDetailsFragment(contractId)
+                        findNavController().navigate(action)
+                    }
                 binding.recyclerViewContracts.adapter = adapter
             }
         }

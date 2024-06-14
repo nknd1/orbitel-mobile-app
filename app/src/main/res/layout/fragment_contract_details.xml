@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".presentation.fragments.ContractDetailsFragment">
+
+<!-- Tariff Card -->
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:elevation="4dp"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTariffName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Тариф"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTariffPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Цена" />
+
+        <TextView
+            android:id="@+id/tvTariffSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Скорость" />
+        <TextView
+            android:id="@+id/tvContractId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+<!-- Connected Services List -->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Подключенные услуги"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="8dp" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerViewServices"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1" />
+
+<!-- Sections for Tariffs, Services and Transaction History -->
+<Button
+    android:id="@+id/btnChangeTariff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Сменить тариф"
+    android:layout_marginTop="16dp" />
+
+<Button
+    android:id="@+id/btnManageServices"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Управление услугами"
+    android:layout_marginTop="8dp" />
+
+<Button
+    android:id="@+id/btnTransactionHistory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="История операций"
+    android:layout_marginTop="8dp" />
+
+<EditText
+    android:id="@+id/etTopUpAmount"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Введите сумму пополнения"
+    android:inputType="numberDecimal"
+    android:padding="8dp"
+    android:layout_marginTop="16dp"
+    android:autofillHints="" />
+
+<Button
+    android:id="@+id/btnTopUpBalance"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Пополнить баланс"
+    android:padding="8dp" />
+</LinearLayout>

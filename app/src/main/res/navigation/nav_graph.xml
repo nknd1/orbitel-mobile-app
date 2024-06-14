@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress NavigationFile -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -22,7 +23,16 @@
         android:name="com.example.myorbitel.presentation.fragments.ClientInfoFragment"
         android:label="fragment_client_info"
         tools:layout="@layout/fragment_client_info"
-        />
+        >
+        <action
+            android:id="@+id/action_clientInfoFragment_to_contractDetailsFragment"
+            app:destination="@id/contractDetailsFragment" >
+            <argument
+                android:name="contractId"
+                app:argType="string"
+                app:nullable="false"/>
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.example.myorbitel.splash.SplashFragment"
@@ -33,5 +43,16 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/contractDetailsFragment"
+        android:name="com.example.myorbitel.presentation.fragments.ContractDetailsFragment"
+        android:label="fragment_contract_details"
+        tools:layout="@layout/fragment_contract_details" >
+
+        <argument
+            android:name="contractId"
+            app:argType="string"
+            app:nullable="false"/>
     </fragment>
 </navigation>

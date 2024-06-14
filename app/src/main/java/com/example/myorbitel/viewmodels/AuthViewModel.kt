@@ -94,9 +94,4 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
                 Log.e(TAG, "Token is null")
             }
         }
-
-    fun getContractDetails(contractId: Int) {
-        // Здесь вызовите API для получения деталей договора
-        // и обновите _contractDetails
-    }
 }
