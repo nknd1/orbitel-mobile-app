@@ -6,5 +6,4 @@ data class ContractDetails(
     val speed: String,
     val tariff_name: String,
     val tariff_price: String,
-    val services: List<Services>,
 )

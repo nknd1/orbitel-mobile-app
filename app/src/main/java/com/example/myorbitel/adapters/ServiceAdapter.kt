@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myorbitel.databinding.ItemSerBinding
-import com.example.myorbitel.models.Services
+import com.example.myorbitel.models.Service
 
 class ServiceAdapter(
-    private val services: List<Services>,
+    private val services: List<Service>,
 ) : RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>() {
     inner class ServiceViewHolder(val binding: ItemSerBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(services: Services) {
+        fun bind(services: Service) {
             "Название: ${services.service_name}".also { binding.serviceName.text = it }
             "Описание: ${services.feature}".also { binding.serviceFeature.text = it }
             "Стоимость: ${services.price} руб. ".also { binding.servicePrice.text = it }

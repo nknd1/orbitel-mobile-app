@@ -2,8 +2,8 @@ package com.example.myorbitel.network
 
 import com.example.myorbitel.models.AuthRequest
 import com.example.myorbitel.models.ClientInfo
-import com.example.myorbitel.models.ContractDetails
 import com.example.myorbitel.models.ContractInfo
+import com.example.myorbitel.models.ContractInfoResponse
 import com.example.myorbitel.models.LoginResponse
 import retrofit2.Response
 import retrofit2.http.Body
@@ -32,5 +32,5 @@ interface ApiService {
     suspend fun getContractDetails(
         @Header("Authorization") token: String,
         @Query("contract_id") contractId: String,
-    ): Response<ContractDetails>
+    ): Response<ContractInfoResponse>
 }

@@ -7,14 +7,14 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.myorbitel.models.ContractDetails
+import com.example.myorbitel.models.ContractInfoResponse
 import com.example.myorbitel.utils.RetrofitInstance
 import com.example.myorbitel.utils.RetrofitInstance.getToken
 import kotlinx.coroutines.launch
 
 class ContractDetailsViewModel(application: Application) : AndroidViewModel(application) {
-    private val _contractDetails = MutableLiveData<ContractDetails>()
-    val contractDetails: LiveData<ContractDetails> get() = _contractDetails
+    private val _contractDetails = MutableLiveData<ContractInfoResponse>()
+    val contractDetails: LiveData<ContractInfoResponse> get() = _contractDetails
 
     @Suppress("ktlint:standard:property-naming")
     private val TAG: String = ""
@@ -28,8 +28,8 @@ class ContractDetailsViewModel(application: Application) : AndroidViewModel(appl
                     val response =
                         RetrofitInstance.apiService.getContractDetails("Bearer $it", contractId)
                     if (response.isSuccessful) {
-                        response.body()?.let { details ->
-                            _contractDetails.value = details
+                        response.body()?.let { contractInfoResponse ->
+                            _contractDetails.value = contractInfoResponse
                         }
                     } else {
                         Log.e(
