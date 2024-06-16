@@ -16,6 +16,9 @@ class ContractDetailsViewModel(application: Application) : AndroidViewModel(appl
     private val _contractDetails = MutableLiveData<ContractInfoResponse>()
     val contractDetails: LiveData<ContractInfoResponse> get() = _contractDetails
 
+    private val _serviceRemoved = MutableLiveData<Boolean>()
+    val serviceRemoved: LiveData<Boolean> get() = _serviceRemoved
+
     @Suppress("ktlint:standard:property-naming")
     private val TAG: String = ""
 
@@ -44,4 +47,32 @@ class ContractDetailsViewModel(application: Application) : AndroidViewModel(appl
                 Log.e(TAG, "Token is null")
             }
         }
+
+    @SuppressLint("LogNotTimber")
+    fun removeServiceFromContract(
+        contractId: String,
+        serviceId: Int,
+    ) {
+        viewModelScope.launch {
+            val token = getToken(getApplication())
+            token?.let {
+                try {
+                    val response = RetrofitInstance.apiService.removeServiceFromContract("Bearer $it", contractId, serviceId)
+                    if (response.isSuccessful) {
+                        _serviceRemoved.value = true
+                        getContractDetails(contractId)
+                    } else {
+                        Log.e(TAG, "Removing service failed: ${response.errorBody()?.string()}")
+                        _serviceRemoved.value = false
+                    }
+                } catch (e: Exception) {
+                    Log.e(TAG, "Exception during removing service: ${e.message}")
+                    _serviceRemoved.value = false
+                }
+            } ?: run {
+                Log.e(TAG, "Token is null")
+                _serviceRemoved.value = false
+            }
+        }
+    }
 }

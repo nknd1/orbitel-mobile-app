@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,9 +43,19 @@ class ContractDetailsFragment : Fragment() {
                 "Цена: ${contractInfoResponse.contractDetails.tariff_price}₽ в месяц".also { binding.tvTariffPrice.text = it }
                 "Скорость интернета: ${contractInfoResponse.contractDetails.speed} мбит/с".also { binding.tvTariffSpeed.text = it }
 
-                val serviceAdapter = ServiceAdapter(contractInfoResponse.services)
+                val serviceAdapter =
+                    ServiceAdapter(contractInfoResponse.services) { serviceId ->
+                        viewModel.removeServiceFromContract(contractId, serviceId)
+                    }
                 binding.recyclerViewServices.adapter = serviceAdapter
                 binding.recyclerViewServices.layoutManager = LinearLayoutManager(requireContext())
+            }
+        }
+        viewModel.serviceRemoved.observe(viewLifecycleOwner) { removed ->
+            if (removed) {
+                Toast.makeText(requireContext(), "Услуга успешно удалена", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), "Не удалось удалить услугу", Toast.LENGTH_SHORT).show()
             }
         }
         viewModel.getContractDetails(contractId)
