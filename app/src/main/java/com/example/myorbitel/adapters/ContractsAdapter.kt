@@ -10,11 +10,11 @@ class ContractsAdapter(private val contracts: List<ContractInfo>, private val on
     RecyclerView.Adapter<ContractsAdapter.ContractViewHolder>() {
     inner class ContractViewHolder(val binding: ItemContractBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(contract: ContractInfo) {
-            binding.tvContractId.text = "ID: ${contract.contract_id}"
-            binding.tvConnectAddress.text = "Адрес подключения: ${contract.connect_address}"
-            binding.tvBalance.text = "Текущий балнас: ${contract.balance}"
-            binding.tvContractNumber.text = "Номер договора: ${contract.contract_number}"
-            binding.tvPersonalAccount.text = "Лицевой счёт: ${contract.personal_account}"
+            "ID: ${contract.contract_id}".also { binding.tvContractId.text = it }
+            "Адрес подключения: ${contract.connect_address}".also { binding.tvConnectAddress.text = it }
+            "Текущий баланс: ${contract.balance} ₽".also { binding.tvBalance.text = it }
+            "Номер договора: ${contract.contract_number}".also { binding.tvContractNumber.text = it }
+            "Лицевой счёт: ${contract.personal_account}".also { binding.tvPersonalAccount.text = it }
             binding.root.setOnClickListener {
                 onContractClick(contract.contract_id)
             }
