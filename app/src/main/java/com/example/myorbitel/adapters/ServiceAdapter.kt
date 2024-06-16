@@ -13,7 +13,7 @@ class ServiceAdapter(
         fun bind(services: Service) {
             "Название: ${services.service_name}".also { binding.serviceName.text = it }
             "Описание: ${services.feature}".also { binding.serviceFeature.text = it }
-            "Стоимость: ${services.price} руб. ".also { binding.servicePrice.text = it }
+            "Стоимость: ${services.price}₽".also { binding.servicePrice.text = it }
         }
     }
 

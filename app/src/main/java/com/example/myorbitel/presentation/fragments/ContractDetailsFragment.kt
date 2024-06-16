@@ -38,8 +38,8 @@ class ContractDetailsFragment : Fragment() {
         viewModel.contractDetails.observe(viewLifecycleOwner) { contractInfoResponse ->
             contractInfoResponse?.let {
                 "ID: ${contractInfoResponse.contractDetails.contract_id}".also { binding.tvContractId.text = it }
-                "Название: ${contractInfoResponse.contractDetails.tariff_name}".also { binding.tvTariffName.text = it }
-                "Цена: ${contractInfoResponse.contractDetails.tariff_price} в месяц".also { binding.tvTariffPrice.text = it }
+                binding.tvTariffName.text = contractInfoResponse.contractDetails.tariff_name
+                "Цена: ${contractInfoResponse.contractDetails.tariff_price}₽ в месяц".also { binding.tvTariffPrice.text = it }
                 "Скорость интернета: ${contractInfoResponse.contractDetails.speed} мбит/с".also { binding.tvTariffSpeed.text = it }
 
                 val serviceAdapter = ServiceAdapter(contractInfoResponse.services)
