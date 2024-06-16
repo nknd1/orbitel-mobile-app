@@ -58,6 +58,12 @@
     </string>
     <string name="loading_text">…</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="client_address_registration">Client Address Registration:</string>
+    <string name="client_fio">Client FIO:</string>
+    <string name="client_id">Client ID:</string>
+    <string name="client_phone">Client Phone:</string>
+    <string name="type_id">Type ID:</string>
+    <string name="MainPage">Главная</string>
 
 
     <!--  -->

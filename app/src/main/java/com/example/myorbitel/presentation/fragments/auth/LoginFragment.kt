@@ -67,22 +67,26 @@ class LoginFragment : Fragment() {
 
  */
 
-
 class LoginFragment : Fragment() {
-
     private lateinit var viewModel: AuthViewModel
+
+    @Suppress("ktlint:standard:backing-property-naming")
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?,
+    ) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[AuthViewModel::class.java]
 
@@ -92,18 +96,14 @@ class LoginFragment : Fragment() {
             viewModel.login(AuthRequest(phone, password))
             binding.personalAccountET.setText("+7")
 
-            // Если вы хотите, чтобы курсор автоматически перемещался в конец строки после установки значения,
-            // используйте следующий код:
             binding.personalAccountET.text?.let { it1 -> binding.personalAccountET.setSelection(it1.length) }
         }
 
         viewModel.token.observe(viewLifecycleOwner) {
             it?.let {
                 findNavController().navigate(R.id.action_loginFragment_to_clientInfoFragment)
-
             }
         }
-
     }
 
     override fun onDestroyView() {

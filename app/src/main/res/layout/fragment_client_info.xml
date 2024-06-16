@@ -20,7 +20,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Профиль"
+            android:text="@string/MainPage"
             android:textSize="@dimen/_20ssp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
                         android:id="@+id/tvClientAddressRegistration"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Client Address Registration:"
+                        android:text="@string/client_address_registration"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -71,7 +71,7 @@
                         android:id="@+id/tvClientFio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Client FIO:"
+                        android:text="@string/client_fio"
                         app:layout_constraintEnd_toEndOf="@+id/tvClientAddressRegistration"
                         app:layout_constraintStart_toStartOf="@+id/tvClientAddressRegistration"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientAddressRegistration" />
@@ -80,7 +80,7 @@
                         android:id="@+id/tvClientId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Client ID:"
+                        android:text="@string/client_id"
                         app:layout_constraintEnd_toEndOf="@+id/tvClientFio"
                         app:layout_constraintStart_toStartOf="@+id/tvClientFio"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientFio" />
@@ -89,7 +89,7 @@
                         android:id="@+id/tvClientPhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Client Phone:"
+                        android:text="@string/client_phone"
                         app:layout_constraintEnd_toEndOf="@+id/tvClientId"
                         app:layout_constraintStart_toStartOf="@+id/tvClientId"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientId" />
@@ -98,7 +98,7 @@
                         android:id="@+id/tvTypeId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Type ID:"
+                        android:text="@string/type_id"
                         app:layout_constraintEnd_toEndOf="@+id/tvClientPhone"
                         app:layout_constraintStart_toStartOf="@+id/tvClientPhone"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientPhone" />

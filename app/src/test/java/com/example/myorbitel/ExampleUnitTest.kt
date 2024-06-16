@@ -1,8 +1,9 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.example.myorbitel
 
-import org.junit.Test
-
 import org.junit.Assert.*
+import org.junit.Test
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -14,8 +15,8 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
-    @Test
-    fun test_click(){
 
+    @Test
+    fun test_click() {
     }
 }
