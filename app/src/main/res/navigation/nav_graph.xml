@@ -54,5 +54,13 @@
             android:name="contractId"
             app:argType="string"
             app:nullable="false"/>
+        <action
+            android:id="@+id/action_contractDetailsFragment_to_serviceListFragment"
+            app:destination="@id/serviceListFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/serviceListFragment"
+        android:name="com.example.myorbitel.presentation.fragments.ServiceListFragment"
+        android:label="fragment_service_list"
+        tools:layout="@layout/fragment_service_list" />
 </navigation>

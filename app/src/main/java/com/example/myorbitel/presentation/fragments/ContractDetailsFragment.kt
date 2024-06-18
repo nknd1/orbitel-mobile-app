@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myorbitel.R
 import com.example.myorbitel.adapters.ServiceAdapter
 import com.example.myorbitel.databinding.FragmentContractDetailsBinding
 import com.example.myorbitel.viewmodels.ContractDetailsViewModel
@@ -51,6 +53,7 @@ class ContractDetailsFragment : Fragment() {
                 binding.recyclerViewServices.layoutManager = LinearLayoutManager(requireContext())
             }
         }
+
         viewModel.serviceRemoved.observe(viewLifecycleOwner) { removed ->
             if (removed) {
                 Toast.makeText(requireContext(), "Услуга успешно удалена", Toast.LENGTH_SHORT).show()
@@ -58,6 +61,15 @@ class ContractDetailsFragment : Fragment() {
                 Toast.makeText(requireContext(), "Не удалось удалить услугу", Toast.LENGTH_SHORT).show()
             }
         }
+
         viewModel.getContractDetails(contractId)
+
+        binding.btnManageServices.setOnClickListener {
+            val bundle =
+                Bundle().apply {
+                    putString("contractId", contractId)
+                }
+            findNavController().navigate(R.id.action_contractDetailsFragment_to_serviceListFragment, bundle)
+        }
     }
 }

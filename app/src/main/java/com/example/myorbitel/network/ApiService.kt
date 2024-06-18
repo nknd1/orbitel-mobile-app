@@ -5,6 +5,7 @@ import com.example.myorbitel.models.ClientInfo
 import com.example.myorbitel.models.ContractInfo
 import com.example.myorbitel.models.ContractInfoResponse
 import com.example.myorbitel.models.LoginResponse
+import com.example.myorbitel.models.Service
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -42,4 +43,14 @@ interface ApiService {
         @Path("contract_id") contractId: String,
         @Path("service_id") serviceId: Int,
     ): Response<Unit>
+
+    @GET("services")
+    suspend fun getAllServices(): Response<List<Service>>
+
+    @POST("clients/contracts/{contract_id}/services/{service_id}")
+    suspend fun addServiceToContract(
+        @Header("Authorization") token: String,
+        @Path("contract_id") contractId: String,
+        @Path("service_id") serviceId: Int,
+    ): Response<Any>
 }
