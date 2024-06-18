@@ -72,7 +72,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/client_address_registration"
-                        android:textSize="@dimen/_17ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientId" />
@@ -82,7 +82,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/client_fio"
-                        android:textSize="@dimen/_17ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintEnd_toEndOf="@+id/tvClientAddressRegistration"
                         app:layout_constraintStart_toStartOf="@+id/tvClientAddressRegistration"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientAddressRegistration" />
@@ -92,7 +92,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/client_id"
-                        android:textSize="@dimen/_17ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:layout_editor_absoluteX="13dp" />
 
@@ -101,7 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/client_phone"
-                        android:textSize="@dimen/_17ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintEnd_toEndOf="@+id/tvClientId"
                         app:layout_constraintStart_toStartOf="@+id/tvClientId"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientFio" />
@@ -111,7 +111,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/type_id"
-                        android:textSize="@dimen/_17ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintEnd_toEndOf="@+id/tvClientPhone"
                         app:layout_constraintStart_toStartOf="@+id/tvClientPhone"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientPhone" />
