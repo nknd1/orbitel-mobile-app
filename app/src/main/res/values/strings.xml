@@ -65,6 +65,9 @@
     <string name="type_id">Type ID:</string>
     <string name="MainPage">Главная</string>
     <string name="OffService">Отключить</string>
+    <string name="PersonalInformation">Личная информация</string>
+    <string name="ClientContract">Мои договоры</string>
+    <string name="settings">settings</string>
 
 
     <!--  -->
