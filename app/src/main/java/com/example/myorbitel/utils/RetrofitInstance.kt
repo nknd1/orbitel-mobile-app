@@ -6,8 +6,6 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.example.myorbitel.data.retrofit.api.ContractInfoApi
-import com.example.myorbitel.data.retrofit.api.TariffsApi
 import com.example.myorbitel.network.ApiService
 import com.example.myorbitel.utils.Utils.BASE
 import kotlinx.coroutines.flow.first
@@ -19,13 +17,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
 object RetrofitInstance {
-    private val loggingInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY
-    }
+    private val loggingInterceptor =
+        HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+            level = HttpLoggingInterceptor.Level.HEADERS
+            level = HttpLoggingInterceptor.Level.BASIC
+        }
 
-    private val client = OkHttpClient.Builder()
-        .addInterceptor(loggingInterceptor)
-        .build()
+    private val client =
+        OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+            .build()
 
     private val retrofit by lazy {
         Retrofit.Builder()
@@ -35,38 +37,40 @@ object RetrofitInstance {
             .build()
     }
 
-    private val tokenInterceptor = Interceptor { chain ->
-        val token = TokenManager.token
-        val request = chain.request().newBuilder()
-            .addHeader("Authorization", "Bearer $token")
+    private val tokenInterceptor =
+        Interceptor { chain ->
+            val token = TokenManager.token
+            val request =
+                chain.request().newBuilder()
+                    .addHeader("Authorization", "Bearer $token")
+                    .build()
+            chain.proceed(request)
+        }
+
+    private val okHttpClient =
+        OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+            .addInterceptor(tokenInterceptor)
             .build()
-        chain.proceed(request)
-    }
 
-    private val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor(loggingInterceptor)
-        .addInterceptor(tokenInterceptor)
-        .build()
-
-    val api: TariffsApi by lazy {
-        retrofit.create(TariffsApi::class.java)
-    }
-    val api_v1: ContractInfoApi by lazy {
-        retrofit.create(ContractInfoApi::class.java)
-    }
     val apiService: ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
+
     object TokenManager {
         var token: String? = null
     }
+
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "user_prefs")
 
     object PreferencesKeys {
         val JWT_TOKEN = stringPreferencesKey("jwt_token")
     }
 
-    suspend fun saveToken(context: Context, token: String) {
+    suspend fun saveToken(
+        context: Context,
+        token: String,
+    ) {
         context.dataStore.edit { preferences ->
             preferences[PreferencesKeys.JWT_TOKEN] = token
         }
@@ -76,5 +80,4 @@ object RetrofitInstance {
         val preferences = context.dataStore.data.first()
         return preferences[PreferencesKeys.JWT_TOKEN]
     }
-
 }

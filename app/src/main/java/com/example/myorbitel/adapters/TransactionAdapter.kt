@@ -1,5 +1,5 @@
 package com.example.myorbitel.adapters
-
+/*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,3 +46,5 @@ class TransactionAdapter(private val transactions: List<Transaction>) : Recycler
         return transactions.size
     }
 }
+
+ */

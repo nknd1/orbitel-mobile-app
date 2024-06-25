@@ -6,11 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myorbitel.databinding.ItemContractBinding
 import com.example.myorbitel.models.ContractInfo
 
-class ContractsAdapter(private val contracts: List<ContractInfo>, private val onContractClick: (String) -> Unit) :
+class ContractsAdapter(private val contracts: List<ContractInfo>, private val onContractClick: (Int) -> Unit) :
     RecyclerView.Adapter<ContractsAdapter.ContractViewHolder>() {
     inner class ContractViewHolder(val binding: ItemContractBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(contract: ContractInfo) {
-            "ID: ${contract.contract_id}".also { binding.tvContractId.text = it }
             "Адрес подключения: ${contract.connect_address}".also { binding.tvConnectAddress.text = it }
             "Текущий баланс: ${contract.balance} ₽".also { binding.tvBalance.text = it }
             "Номер договора: ${contract.contract_number}".also { binding.tvContractNumber.text = it }

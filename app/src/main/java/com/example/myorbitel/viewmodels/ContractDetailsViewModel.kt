@@ -3,11 +3,13 @@ package com.example.myorbitel.viewmodels
 import android.annotation.SuppressLint
 import android.app.Application
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.myorbitel.models.ContractInfoResponse
+import com.example.myorbitel.models.TopUpRequest
 import com.example.myorbitel.utils.RetrofitInstance
 import com.example.myorbitel.utils.RetrofitInstance.getToken
 import kotlinx.coroutines.launch
@@ -23,7 +25,7 @@ class ContractDetailsViewModel(application: Application) : AndroidViewModel(appl
     private val TAG: String = ""
 
     @SuppressLint("LogNotTimber")
-    fun getContractDetails(contractId: String) =
+    fun getContractDetails(contractId: Int) =
         viewModelScope.launch {
             val token = getToken(getApplication())
             token?.let {
@@ -50,7 +52,7 @@ class ContractDetailsViewModel(application: Application) : AndroidViewModel(appl
 
     @SuppressLint("LogNotTimber")
     fun removeServiceFromContract(
-        contractId: String,
+        contractId: Int,
         serviceId: Int,
     ) {
         viewModelScope.launch {
@@ -72,6 +74,32 @@ class ContractDetailsViewModel(application: Application) : AndroidViewModel(appl
             } ?: run {
                 Log.e(TAG, "Token is null")
                 _serviceRemoved.value = false
+            }
+        }
+    }
+
+    @SuppressLint("LogNotTimber")
+    fun topUpBalance(
+        contractId: Int,
+        amount: Double?,
+    ) {
+        viewModelScope.launch {
+            val token = getToken(getApplication())
+            token?.let {
+                try {
+                    val response = RetrofitInstance.apiService.topUpBalance("Bearer $it", contractId, TopUpRequest(amount))
+                    if (response.isSuccessful) {
+                        Toast.makeText(getApplication(), "Баланс пополнен успешно", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Log.e("ContractDetailsVM", "Error topping up balance: ${response.errorBody()?.string()}")
+                        Toast.makeText(getApplication(), "Ошибка пополнения баланса", Toast.LENGTH_SHORT).show()
+                    }
+                } catch (e: Exception) {
+                    Log.e("ContractDetailsVM", "Exception: ${e.message}")
+                    Toast.makeText(getApplication(), "Ошибка пополнения баланса", Toast.LENGTH_SHORT).show()
+                }
+            } ?: run {
+                Log.e("ContractDetailsVM", "Token is null")
             }
         }
     }

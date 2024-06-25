@@ -41,7 +41,6 @@ class ClientInfoFragment : Fragment() {
 
         viewModel.clientInfo.observe(viewLifecycleOwner) { clientInfo ->
             clientInfo?.let {
-                binding.tvClientId.text = "ID: ${it.client_id}"
                 binding.tvClientAddressRegistration.text = "Адрес регистрации: ${it.client_address_registration}"
                 binding.tvClientFio.text = "ФИО: ${it.client_fio}"
                 binding.tvClientPhone.text = "Номер телефона: ${it.client_phone}"

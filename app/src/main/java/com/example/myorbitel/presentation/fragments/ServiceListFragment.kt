@@ -38,7 +38,7 @@ class ServiceListFragment : Fragment() {
 
         adapter =
             ServiceTariffAdapter(emptyList()) { serviceId ->
-                val contractId = arguments?.getString("contractId") ?: return@ServiceTariffAdapter
+                val contractId = arguments?.getInt("contractId") ?: return@ServiceTariffAdapter
                 viewModel.addServiceToContract(contractId, serviceId)
             }
 

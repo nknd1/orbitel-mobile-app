@@ -1,5 +1,5 @@
 package com.example.myorbitel.presentation.fragments
-
+/*
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -59,3 +59,6 @@ class TransactionHistoryFragment : Fragment() {
         _binding = null
     }
 }
+
+
+ */

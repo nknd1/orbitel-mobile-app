@@ -27,31 +27,9 @@ class TariffViewModel : ViewModel() {
         _loading.value = true
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val response = RetrofitInstance.api.getAllTariffs()
+                val response = RetrofitInstance.apiService.getAllTariffs()
                 withContext(Dispatchers.Main) {
                     _tariffs.value = response
-                    _loading.value = false
-                }
-            } catch (e: Exception) {
-                e.printStackTrace()
-                withContext(Dispatchers.Main) {
-                    _error.value = "Error: ${e.message}"
-                    _loading.value = false
-                }
-            }
-        }
-    }
-    fun fetchTariffDetails(tariffId: Int) {
-        _loading.value = true
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val response = RetrofitInstance.api.getTariffDetails(tariffId).execute()
-                withContext(Dispatchers.Main) {
-                    if (response.isSuccessful) {
-                        _tariffDetails.value = response.body()
-                    } else {
-                        _error.value = "Error: ${response.errorBody()?.string()}"
-                    }
                     _loading.value = false
                 }
             } catch (e: Exception) {

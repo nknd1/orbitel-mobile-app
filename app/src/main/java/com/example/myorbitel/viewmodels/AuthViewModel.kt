@@ -40,11 +40,11 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
                         }
                     }
                     else -> {
-                        Log.e(TAG, "Login failed: ${response.errorBody()?.string()}")
+                        Log.e(TAG, "Неверные данные: ${response.errorBody()?.string()}")
                     }
                 }
             } catch (e: Exception) {
-                Log.e(TAG, "Exception during login: ${e.message}")
+                Log.e(TAG, "Ошибка сервера: ${e.message}")
             }
         }
 
@@ -58,15 +58,15 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
                     when {
                         response.isSuccessful -> {
                             response.body()?.let { clientInfo ->
-                                _clientInfo.value = clientInfo // remove "it"
+                                _clientInfo.value = clientInfo
                             }
                         }
                         else -> {
-                            Log.e(TAG, "Fetching client info failed: ${response.errorBody()?.string()}")
+                            Log.e(TAG, "Ошибка получение информации о клиенте: ${response.errorBody()?.string()}")
                         }
                     }
                 } catch (e: Exception) {
-                    Log.e(TAG, "Exception during fetching client info: ${e.message}")
+                    Log.e(TAG, "Ошибка сервера: ${e.message}")
                 }
             } ?: run {
                 Log.e(TAG, "Token is null")
@@ -85,10 +85,10 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
                             _contracts.value = contracts
                         }
                     } else {
-                        Log.e(TAG, "Fetching contracts failed: ${response.errorBody()?.string()}")
+                        Log.e(TAG, "Ошибка получения информации о договорах клиента: ${response.errorBody()?.string()}")
                     }
                 } catch (e: Exception) {
-                    Log.e(TAG, "Exception during fetching contracts: ${e.message}")
+                    Log.e(TAG, "Ошибка сервера: ${e.message}")
                 }
             } ?: run {
                 Log.e(TAG, "Token is null")

@@ -41,7 +41,7 @@ class ServiceListViewModel(application: Application) : AndroidViewModel(applicat
 
     @SuppressLint("LogNotTimber")
     fun addServiceToContract(
-        contractId: String,
+        contractId: Int,
         serviceId: Int,
     ) {
         viewModelScope.launch {

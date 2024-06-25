@@ -68,6 +68,7 @@
     <string name="PersonalInformation">Личная информация</string>
     <string name="ClientContract">Мои договоры</string>
     <string name="settings">settings</string>
+    <string name="ServiceConnect">Подключенные услуги</string>
 
 
     <!--  -->

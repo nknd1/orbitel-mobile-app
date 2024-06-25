@@ -12,61 +12,6 @@ import com.example.myorbitel.databinding.FragmentLoginBinding
 import com.example.myorbitel.models.AuthRequest
 import com.example.myorbitel.viewmodels.AuthViewModel
 
-/*
-class LoginFragment : Fragment() {
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
-    private val viewModel: LoginViewModel by viewModels()
-
-    val TAG = "Login"
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
-
-
-        binding.loginBtn.setOnClickListener {
-            val client_phone = binding.personalAccountET.text.toString()
-            val password = binding.passwordEt.text.toString()
-
-            lifecycleScope.launch {
-                val authRequest = AuthRequest(client_phone, password)
-                viewModel.login(authRequest).observe(viewLifecycleOwner) { result ->
-                    when(result){
-                        is LoginResult.Success -> {
-                            Log.d(TAG, "onCreateView: ")
-                            val token = result.token
-
-                        }
-                        is LoginResult.Error ->
-                            Log.d(TAG, "onCreateView: d")
-
-
-                    }
-                }
-            }
-
-        }
-
-
-
-        return binding.root
-
-
-
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-}
-
- */
-
 class LoginFragment : Fragment() {
     private lateinit var viewModel: AuthViewModel
 

@@ -36,12 +36,11 @@ class ContractDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[ContractDetailsViewModel::class.java]
 
-        val contractId = arguments?.getString("contractId") ?: return
+        val contractId = arguments?.getInt("contractId") ?: return
 
         viewModel.contractDetails.observe(viewLifecycleOwner) { contractInfoResponse ->
             contractInfoResponse?.let {
-                "ID: ${contractInfoResponse.contractDetails.contract_id}".also { binding.tvContractId.text = it }
-                binding.tvTariffName.text = contractInfoResponse.contractDetails.tariff_name
+                "Название ${contractInfoResponse.contractDetails.tariff_name}".also { binding.tvTariffName.text = it }
                 "Цена: ${contractInfoResponse.contractDetails.tariff_price}₽ в месяц".also { binding.tvTariffPrice.text = it }
                 "Скорость интернета: ${contractInfoResponse.contractDetails.speed} мбит/с".also { binding.tvTariffSpeed.text = it }
 
@@ -67,9 +66,24 @@ class ContractDetailsFragment : Fragment() {
         binding.btnManageServices.setOnClickListener {
             val bundle =
                 Bundle().apply {
-                    putString("contractId", contractId)
+                    putInt("contractId", contractId)
                 }
             findNavController().navigate(R.id.action_contractDetailsFragment_to_serviceListFragment, bundle)
+        }
+
+        binding.btnChangeTariff.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt("contractId", contractId)
+            findNavController().navigate(R.id.action_contractDetailsFragment_to_tariffListFragment, bundle)
+        }
+
+        binding.btnTopUpBalance.setOnClickListener {
+            val amount = binding.etTopUpAmount.text.toString().toDoubleOrNull()
+            if (amount != null) {
+                viewModel.topUpBalance(contractId, amount)
+            } else {
+                Toast.makeText(requireContext(), "Введите корректную сумму", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
