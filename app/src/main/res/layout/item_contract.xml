@@ -16,27 +16,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-
-        <TextView
-            android:id="@+id/tvConnectAddress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Connect Address"
-            android:textSize="@dimen/_13ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvBalance"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Balance"
-            android:textSize="@dimen/_13ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvConnectAddress"/>
-
         <TextView
             android:id="@+id/tvContractNumber"
             android:layout_width="0dp"
@@ -45,7 +24,7 @@
             android:textSize="@dimen/_13ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvBalance"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvPersonalAccount"
@@ -55,6 +34,27 @@
             android:textSize="@dimen/_13ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvContractNumber"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvContractNumber" />
+
+        <TextView
+            android:id="@+id/tvBalance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Balance"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPersonalAccount" />
+
+        <TextView
+            android:id="@+id/tvConnectAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Connect Address"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBalance" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

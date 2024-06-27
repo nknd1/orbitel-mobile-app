@@ -40,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Добавить"
+            android:layout_gravity="end"
             android:textColorHint="@color/white"/>
     </LinearLayout>
 
