@@ -12,9 +12,9 @@ class ServiceTariffAdapter(
 ) : RecyclerView.Adapter<ServiceTariffAdapter.ServiceTariffViewHolder>() {
     inner class ServiceTariffViewHolder(val binding: ItemServiceBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(service: Service) {
-            "Название:${service.service_name}".also { binding.serviceName.text = it }
-            "Описание:${service.feature}".also { binding.serviceFeature.text = it }
-            "Цена:${service.price}₽".also { binding.servicePrice.text = it }
+            "Название: ${service.service_name}".also { binding.serviceName.text = it }
+            "Описание: ${service.feature}".also { binding.serviceFeature.text = it }
+            "Цена: ${service.price}₽".also { binding.servicePrice.text = it }
             binding.btnAddService.setOnClickListener {
                 onAddService(service.service_id)
             }

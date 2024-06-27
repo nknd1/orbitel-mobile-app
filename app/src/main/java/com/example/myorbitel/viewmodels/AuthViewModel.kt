@@ -25,7 +25,6 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
     val clientInfo: LiveData<ClientInfo> get() = _clientInfo
     private val _contracts = MutableLiveData<List<ContractInfo>>()
     val contracts: LiveData<List<ContractInfo>> get() = _contracts
-    // private val context = application.applicationContext
 
     @SuppressLint("LogNotTimber")
     fun login(authRequest: AuthRequest) =

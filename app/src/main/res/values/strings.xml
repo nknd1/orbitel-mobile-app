@@ -69,6 +69,7 @@
     <string name="ClientContract">Мои договоры</string>
     <string name="settings">settings</string>
     <string name="ServiceConnect">Подключенные услуги</string>
+    <string name="TariffPlan">Текущий тарифный план</string>
 
 
     <!--  -->

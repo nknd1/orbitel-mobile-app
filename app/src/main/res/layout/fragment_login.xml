@@ -31,7 +31,11 @@
                 android:id="@+id/personalAccountTil"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/personalAccountET"
@@ -51,7 +55,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:passwordToggleEnabled="true">
+                app:passwordToggleEnabled="true"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordEt"
@@ -72,7 +80,7 @@
                 android:insetTop="0dp"
                 app:cornerRadius="20dp"
                 android:insetBottom="0dp"
-                android:text="ВОЙТИ" />
+                android:text="Войти" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

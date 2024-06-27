@@ -76,14 +76,5 @@ class ContractDetailsFragment : Fragment() {
             bundle.putInt("contractId", contractId)
             findNavController().navigate(R.id.action_contractDetailsFragment_to_tariffListFragment, bundle)
         }
-
-        binding.btnTopUpBalance.setOnClickListener {
-            val amount = binding.etTopUpAmount.text.toString().toDoubleOrNull()
-            if (amount != null) {
-                viewModel.topUpBalance(contractId, amount)
-            } else {
-                Toast.makeText(requireContext(), "Введите корректную сумму", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 }

@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray">
@@ -43,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/_10sdp">
+            android:padding="@dimen/_15sdp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -88,7 +87,6 @@
                         app:layout_constraintTop_toBottomOf="@+id/tvClientAddressRegistration" />
 
 
-
                     <TextView
                         android:id="@+id/tvClientPhone"
                         android:layout_width="match_parent"
@@ -123,10 +121,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_20sdp" />
         </LinearLayout>
-
     </ScrollView>
 
-
+    <Button
+        android:id="@+id/btnTopUpBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Пополнить баланс"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
