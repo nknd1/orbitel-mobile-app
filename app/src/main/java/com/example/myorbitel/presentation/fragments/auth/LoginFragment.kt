@@ -23,7 +23,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -39,9 +39,6 @@ class LoginFragment : Fragment() {
             val phone = binding.personalAccountET.text.toString()
             val password = binding.passwordEt.text.toString()
             viewModel.login(AuthRequest(phone, password))
-            binding.personalAccountET.setText("+7")
-
-            binding.personalAccountET.text?.let { it1 -> binding.personalAccountET.setSelection(it1.length) }
         }
 
         viewModel.token.observe(viewLifecycleOwner) {

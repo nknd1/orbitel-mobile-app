@@ -14,7 +14,6 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 object RetrofitInstance {
     private val loggingInterceptor =
@@ -25,12 +24,14 @@ object RetrofitInstance {
         }
 
     private val client =
-        OkHttpClient.Builder()
+        OkHttpClient
+            .Builder()
             .addInterceptor(loggingInterceptor)
             .build()
 
     private val retrofit by lazy {
-        Retrofit.Builder()
+        Retrofit
+            .Builder()
             .baseUrl(BASE)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
@@ -41,14 +42,17 @@ object RetrofitInstance {
         Interceptor { chain ->
             val token = TokenManager.token
             val request =
-                chain.request().newBuilder()
+                chain
+                    .request()
+                    .newBuilder()
                     .addHeader("Authorization", "Bearer $token")
                     .build()
             chain.proceed(request)
         }
 
     private val okHttpClient =
-        OkHttpClient.Builder()
+        OkHttpClient
+            .Builder()
             .addInterceptor(loggingInterceptor)
             .addInterceptor(tokenInterceptor)
             .build()

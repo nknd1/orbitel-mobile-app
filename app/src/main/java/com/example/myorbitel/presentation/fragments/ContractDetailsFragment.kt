@@ -40,9 +40,9 @@ class ContractDetailsFragment : Fragment() {
 
         viewModel.contractDetails.observe(viewLifecycleOwner) { contractInfoResponse ->
             contractInfoResponse?.let {
-                "Название ${contractInfoResponse.contractDetails.tariff_name}".also { binding.tvTariffName.text = it }
+                "Название: ${contractInfoResponse.contractDetails.tariff_name}".also { binding.tvTariffName.text = it }
                 "Цена: ${contractInfoResponse.contractDetails.tariff_price}₽ в месяц".also { binding.tvTariffPrice.text = it }
-                "Скорость интернета: ${contractInfoResponse.contractDetails.speed} мбит/с".also { binding.tvTariffSpeed.text = it }
+                "Скорость интернета: ${contractInfoResponse.contractDetails.speed} Мбит/с".also { binding.tvTariffSpeed.text = it }
 
                 val serviceAdapter =
                     ServiceAdapter(contractInfoResponse.services) { serviceId ->
@@ -64,10 +64,8 @@ class ContractDetailsFragment : Fragment() {
         viewModel.getContractDetails(contractId)
 
         binding.btnManageServices.setOnClickListener {
-            val bundle =
-                Bundle().apply {
-                    putInt("contractId", contractId)
-                }
+            val bundle = Bundle()
+            bundle.putInt("contractId", contractId)
             findNavController().navigate(R.id.action_contractDetailsFragment_to_serviceListFragment, bundle)
         }
 
