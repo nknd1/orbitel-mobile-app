@@ -37,6 +37,7 @@ class ContractDetailsFragment : Fragment() {
         viewModel = ViewModelProvider(this)[ContractDetailsViewModel::class.java]
 
         val contractId = arguments?.getInt("contractId") ?: return
+        val bundle = Bundle()
 
         viewModel.contractDetails.observe(viewLifecycleOwner) { contractInfoResponse ->
             contractInfoResponse?.let {
@@ -64,13 +65,10 @@ class ContractDetailsFragment : Fragment() {
         viewModel.getContractDetails(contractId)
 
         binding.btnManageServices.setOnClickListener {
-            val bundle = Bundle()
             bundle.putInt("contractId", contractId)
             findNavController().navigate(R.id.action_contractDetailsFragment_to_serviceListFragment, bundle)
         }
-
         binding.btnChangeTariff.setOnClickListener {
-            val bundle = Bundle()
             bundle.putInt("contractId", contractId)
             findNavController().navigate(R.id.action_contractDetailsFragment_to_tariffListFragment, bundle)
         }

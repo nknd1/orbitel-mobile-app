@@ -8,10 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myorbitel.databinding.ItemTariffBinding
 import com.example.myorbitel.models.Tariffs
 
-class TariffAdapter(private val tariffs: List<Tariffs>) : RecyclerView.Adapter<TariffAdapter.TariffViewHolder>() {
-    inner class TariffViewHolder(val binding: ItemTariffBinding) : RecyclerView.ViewHolder(binding.root) {
+class TariffAdapter(
+    private val tariffs: List<Tariffs>,
+) : RecyclerView.Adapter<TariffAdapter.TariffViewHolder>() {
+    inner class TariffViewHolder(
+        val binding: ItemTariffBinding,
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(tariffs: Tariffs) {
-            binding.tariffName.text = "Название:${tariffs.tariff_name}"
+            "Название: ${tariffs.tariff_name}".also { binding.tariffName.text = it }
             "Цена: ${tariffs.price_per_month}Р".also { binding.tariffPrice.text = it }
             "Скорость: ${tariffs.speed} Мбит/с".also { binding.tariffSpeed.text = it }
         }
@@ -32,7 +36,5 @@ class TariffAdapter(private val tariffs: List<Tariffs>) : RecyclerView.Adapter<T
         holder.bind(tariffs[position])
     }
 
-    override fun getItemCount(): Int {
-        return tariffs.size
-    }
+    override fun getItemCount(): Int = tariffs.size
 }

@@ -59,7 +59,7 @@
                 android:layout_marginBottom="@dimen/_20sdp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="@dimen/_8sdp">
+                app:cardElevation="@dimen/_5sdp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -93,7 +93,6 @@
                         android:layout_height="wrap_content"
                         android:text="@string/client_phone"
                         android:textSize="@dimen/_13ssp"
-
                         app:layout_constraintTop_toBottomOf="@+id/tvClientFio" />
 
                     <TextView
