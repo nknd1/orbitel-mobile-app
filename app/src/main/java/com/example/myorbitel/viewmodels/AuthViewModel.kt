@@ -1,6 +1,5 @@
 package com.example.myorbitel.viewmodels
 
-import android.annotation.SuppressLint
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
@@ -15,18 +14,17 @@ import com.example.myorbitel.utils.RetrofitInstance.getToken
 import com.example.myorbitel.utils.RetrofitInstance.saveToken
 import kotlinx.coroutines.launch
 
-class AuthViewModel(application: Application) : AndroidViewModel(application) {
+class AuthViewModel(
+    application: Application,
+) : AndroidViewModel(application) {
     private val _token = MutableLiveData<String>()
     val token: LiveData<String> get() = _token
-
-    @Suppress("ktlint:standard:property-naming")
     private val TAG = "AuthViewModel:"
     private val _clientInfo = MutableLiveData<ClientInfo>()
     val clientInfo: LiveData<ClientInfo> get() = _clientInfo
     private val _contracts = MutableLiveData<List<ContractInfo>>()
     val contracts: LiveData<List<ContractInfo>> get() = _contracts
 
-    @SuppressLint("LogNotTimber")
     fun login(authRequest: AuthRequest) =
         viewModelScope.launch {
             try {
@@ -47,7 +45,6 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
 
-    @SuppressLint("LogNotTimber")
     fun getClientInfo() =
         viewModelScope.launch {
             val token = getToken(getApplication())
@@ -72,7 +69,6 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
 
-    @SuppressLint("LogNotTimber")
     fun getContracts() =
         viewModelScope.launch {
             val token = getToken(getApplication())

@@ -52,7 +52,7 @@
                 android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/materialCardView37"
+                android:id="@+id/materialCardViewProfile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/_5sdp"
@@ -93,6 +93,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/client_phone"
                         android:textSize="@dimen/_13ssp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvClientFio"
+                        app:layout_constraintStart_toStartOf="@+id/tvClientFio"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientFio" />
 
                     <TextView
@@ -101,6 +103,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/type_id"
                         android:textSize="@dimen/_13ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/tvClientPhone"
                         app:layout_constraintStart_toStartOf="@+id/tvClientPhone"
                         app:layout_constraintTop_toBottomOf="@+id/tvClientPhone" />
@@ -123,15 +126,27 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btnTopUpBalance"
+        android:id="@+id/btnAddNewContract"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Пополнить баланс"
+        android:text="@string/addNewContract"
+        app:layout_constraintBottom_toTopOf="@+id/btnTopUpBalance"
+        app:layout_constraintEnd_toEndOf="@+id/btnTopUpBalance"
+        app:layout_constraintStart_toStartOf="@+id/btnTopUpBalance" />
+
+    <Button
+        android:id="@+id/btnTopUpBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:padding="8dp"
+        android:text="@string/topUpBalance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -15,7 +15,6 @@ import com.example.myorbitel.viewmodels.AuthViewModel
 class LoginFragment : Fragment() {
     private lateinit var viewModel: AuthViewModel
 
-    @Suppress("ktlint:standard:backing-property-naming")
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 

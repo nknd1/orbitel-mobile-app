@@ -1,6 +1,5 @@
 package com.example.myorbitel.viewmodels
 
-import android.annotation.SuppressLint
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
@@ -12,7 +11,9 @@ import com.example.myorbitel.utils.RetrofitInstance
 import com.example.myorbitel.utils.RetrofitInstance.getToken
 import kotlinx.coroutines.launch
 
-class ServiceListViewModel(application: Application) : AndroidViewModel(application) {
+class ServiceListViewModel(
+    application: Application,
+) : AndroidViewModel(application) {
     private val _services = MutableLiveData<List<Service>>()
     val services: LiveData<List<Service>> get() = _services
 
@@ -22,7 +23,6 @@ class ServiceListViewModel(application: Application) : AndroidViewModel(applicat
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> get() = _loading
 
-    @SuppressLint("LogNotTimber")
     fun getAllServices() =
         viewModelScope.launch {
             try {
@@ -39,7 +39,6 @@ class ServiceListViewModel(application: Application) : AndroidViewModel(applicat
             }
         }
 
-    @SuppressLint("LogNotTimber")
     fun addServiceToContract(
         contractId: Int,
         serviceId: Int,

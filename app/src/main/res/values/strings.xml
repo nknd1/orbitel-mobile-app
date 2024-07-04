@@ -70,6 +70,8 @@
     <string name="settings">settings</string>
     <string name="ServiceConnect">Подключенные услуги</string>
     <string name="TariffPlan">Текущий тарифный план</string>
+    <string name="addNewContract">Заключить новый договор</string>
+    <string name="topUpBalance">Пополнить баланс</string>
 
 
     <!--  -->
