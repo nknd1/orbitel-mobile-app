@@ -1,6 +1,5 @@
 package com.example.myorbitel.presentation.fragments
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -28,7 +27,6 @@ class ServiceListFragment : Fragment() {
         return binding.root
     }
 
-    @SuppressLint("LogNotTimber")
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?,
@@ -54,7 +52,7 @@ class ServiceListFragment : Fragment() {
             if (serviceAdded) {
                 Toast.makeText(requireContext(), "Услуга успешно подключена", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(requireContext(), "Ошибка при добавлении услуги", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Ошибка при подключении услуги", Toast.LENGTH_SHORT).show()
             }
         }
 

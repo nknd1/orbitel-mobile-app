@@ -1,6 +1,5 @@
 package com.example.myorbitel.presentation.fragments
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +27,6 @@ class ContractDetailsFragment : Fragment() {
         return binding.root
     }
 
-    @SuppressLint("LogNotTimber")
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?,
@@ -37,7 +35,10 @@ class ContractDetailsFragment : Fragment() {
         viewModel = ViewModelProvider(this)[ContractDetailsViewModel::class.java]
 
         val contractId = arguments?.getInt("contractId") ?: return
-        val bundle = Bundle()
+        val bundle =
+            Bundle().apply {
+                putInt("contractId", contractId)
+            }
 
         viewModel.contractDetails.observe(viewLifecycleOwner) { contractInfoResponse ->
             contractInfoResponse?.let {
@@ -65,11 +66,9 @@ class ContractDetailsFragment : Fragment() {
         viewModel.getContractDetails(contractId)
 
         binding.btnManageServices.setOnClickListener {
-            bundle.putInt("contractId", contractId)
             findNavController().navigate(R.id.action_contractDetailsFragment_to_serviceListFragment, bundle)
         }
         binding.btnChangeTariff.setOnClickListener {
-            bundle.putInt("contractId", contractId)
             findNavController().navigate(R.id.action_contractDetailsFragment_to_tariffListFragment, bundle)
         }
     }
