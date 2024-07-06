@@ -23,7 +23,7 @@ class ClientInfoFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentClientInfoBinding.inflate(inflater, container, false)
         return binding.root
     }

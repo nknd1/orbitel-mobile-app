@@ -72,6 +72,8 @@
     <string name="TariffPlan">Текущий тарифный план</string>
     <string name="addNewContract">Заключить новый договор</string>
     <string name="topUpBalance">Пополнить баланс</string>
+    <string name="topUp">Пополнить баланс</string>
+    <string name="page_title">Личный кабинет</string>
 
 
     <!--  -->

@@ -23,7 +23,7 @@ class TariffListFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentTariffListfBinding.inflate(inflater, container, false)
         return binding.root
     }
