@@ -10,8 +10,8 @@ import com.example.myorbitel.models.AuthRequest
 import com.example.myorbitel.models.ClientInfo
 import com.example.myorbitel.models.ContractInfo
 import com.example.myorbitel.utils.RetrofitInstance
-import com.example.myorbitel.utils.RetrofitInstance.getToken
-import com.example.myorbitel.utils.RetrofitInstance.saveToken
+import com.example.myorbitel.utils.getToken
+import com.example.myorbitel.utils.saveToken
 import kotlinx.coroutines.launch
 
 class AuthViewModel(
