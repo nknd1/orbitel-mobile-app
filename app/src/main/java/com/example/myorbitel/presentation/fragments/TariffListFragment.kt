@@ -34,22 +34,32 @@ class TariffListFragment : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
+        binding.recyclerView.adapter = tariffAdapter
         viewModel = ViewModelProvider(this)[TariffViewModel::class.java]
 
         viewModel.tariffs.observe(
             viewLifecycleOwner,
-            Observer { tariffs ->
+        ) { tariffs ->
+            tariffs?.let {
                 tariffAdapter = TariffAdapter(tariffs)
-                binding.recyclerView.adapter = tariffAdapter
-            },
-        )
+            }
+        }
 
         viewModel.loading.observe(
             viewLifecycleOwner,
             Observer { isLoading ->
-                binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-                binding.recyclerView.visibility = if (isLoading) View.GONE else View.VISIBLE
+                binding.progressBar.visibility =
+                    if (isLoading) {
+                        View.VISIBLE
+                    } else {
+                        View.GONE
+                    }
+                binding.recyclerView.visibility =
+                    if (isLoading) {
+                        View.GONE
+                    } else {
+                        View.VISIBLE
+                    }
             },
         )
 

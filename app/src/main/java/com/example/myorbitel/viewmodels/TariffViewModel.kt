@@ -3,7 +3,6 @@ package com.example.myorbitel.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.myorbitel.models.TariffDetailsResponse
 import com.example.myorbitel.models.Tariffs
 import com.example.myorbitel.utils.RetrofitInstance
 import kotlinx.coroutines.CoroutineScope
@@ -20,8 +19,6 @@ class TariffViewModel : ViewModel() {
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> get() = _error
-    private val _tariffDetails = MutableLiveData<TariffDetailsResponse>()
-    val tariffDetails: LiveData<TariffDetailsResponse> get() = _tariffDetails
 
     fun fetchTariffs() {
         _loading.value = true

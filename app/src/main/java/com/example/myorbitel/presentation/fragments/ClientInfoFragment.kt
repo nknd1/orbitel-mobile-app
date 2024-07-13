@@ -14,7 +14,6 @@ import com.example.myorbitel.viewmodels.AuthViewModel
 
 class ClientInfoFragment : Fragment() {
     private lateinit var viewModel: AuthViewModel
-
     private var _binding: FragmentClientInfoBinding? = null
     private val binding get() = _binding!!
     private lateinit var adapter: ContractsAdapter
