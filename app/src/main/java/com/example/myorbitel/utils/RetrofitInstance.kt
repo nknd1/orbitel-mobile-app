@@ -1,7 +1,7 @@
 package com.example.myorbitel.utils
 
 import com.example.myorbitel.network.ApiService
-import com.example.myorbitel.utils.Utils.BASE
+import com.example.myorbitel.utils.NetworkUtil.BASE
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

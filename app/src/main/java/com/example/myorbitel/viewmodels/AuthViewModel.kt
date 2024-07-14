@@ -52,14 +52,11 @@ class AuthViewModel(
                 try {
                     val response = RetrofitInstance.apiService.getClientInfo("Bearer $it")
                     when {
-                        response.isSuccessful -> {
+                        response.isSuccessful ->
                             response.body()?.let { clientInfo ->
                                 _clientInfo.value = clientInfo
                             }
-                        }
-                        else -> {
-                            Log.e(TAG, "Ошибка получение информации о клиенте: ${response.errorBody()?.string()}")
-                        }
+                        else -> Log.e(TAG, "Ошибка получение информации о клиенте: ${response.errorBody()?.string()}")
                     }
                 } catch (e: Exception) {
                     Log.e(TAG, "Ошибка сервера: ${e.message}")
