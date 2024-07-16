@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myorbitel.adapters.TariffAdapter
@@ -47,32 +46,30 @@ class TariffListFragment : Fragment() {
 
         viewModel.loading.observe(
             viewLifecycleOwner,
-            Observer { isLoading ->
-                binding.progressBar.visibility =
-                    if (isLoading) {
-                        View.VISIBLE
-                    } else {
-                        View.GONE
-                    }
-                binding.recyclerView.visibility =
-                    if (isLoading) {
-                        View.GONE
-                    } else {
-                        View.VISIBLE
-                    }
-            },
-        )
+        ) { isLoading ->
+            binding.progressBar.visibility =
+                if (isLoading) {
+                    View.VISIBLE
+                } else {
+                    View.GONE
+                }
+            binding.recyclerView.visibility =
+                if (isLoading) {
+                    View.GONE
+                } else {
+                    View.VISIBLE
+                }
+        }
 
         viewModel.error.observe(
             viewLifecycleOwner,
-            Observer { errorMessage ->
-                errorMessage?.let {
-                    Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
-                }
-            },
-        )
+        ) { errorMessage ->
+            errorMessage?.let {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
+            }
+        }
 
-        viewModel.fetchTariffs()
+        viewModel.getTariffs()
     }
 
     override fun onDestroyView() {

@@ -20,7 +20,7 @@ class TariffViewModel : ViewModel() {
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> get() = _error
 
-    fun fetchTariffs() {
+    fun getTariffs() {
         _loading.value = true
         CoroutineScope(Dispatchers.IO).launch {
             try {
