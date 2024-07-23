@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray">
@@ -122,29 +123,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_20sdp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddNewContract"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:padding="8dp"
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius="20dp"
+                android:text="@string/addNewContract" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTopUpBalance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginBottom="10dp"
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius="20dp"
+                android:padding="8dp"
+                android:text="@string/topUpBalance" />
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/btnAddNewContract"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="@string/addNewContract"
-        app:layout_constraintBottom_toTopOf="@+id/btnTopUpBalance"
-        app:layout_constraintEnd_toEndOf="@+id/btnTopUpBalance"
-        app:layout_constraintStart_toStartOf="@+id/btnTopUpBalance" />
-
-    <Button
-        android:id="@+id/btnTopUpBalance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="8dp"
-        android:text="@string/topUpBalance"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,15 @@
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:orientation="vertical">
-
+            <TextView
+                android:text="@string/Auth"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_20sdp"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/personalAccountTil"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -81,7 +89,6 @@
                 app:cornerRadius="20dp"
                 android:insetBottom="0dp"
                 android:text="Войти" />
-
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
