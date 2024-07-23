@@ -1,11 +1,11 @@
 Дипломный проект на тему: Мобильное приложение для клиентов интернет-провайдера ООО "Орбител" [Клиентская часть].
 
-  Используемые технологии:
-    1)  XML
-    2)  viewBinding
-    3)  Jetpack Navigation
-    4)  DI - ??? (в процессе)
-    5)  Jetpack Datastore
-    6)  Retrofit
-    7)  OkHttp
-    
+Используемые технологии:
+  1) Kotlin
+  2) XML
+  3) viewBinding
+  4) Jetpack Navigation
+  5) Jetpack Datastore
+  6) Retrofit
+  7) OkHttp
+
