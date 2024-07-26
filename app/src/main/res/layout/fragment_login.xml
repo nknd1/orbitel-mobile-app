@@ -11,7 +11,13 @@
         android:id="@+id/materialCardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/_30sdp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="38dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:cardElevation="@dimen/_8sdp"
@@ -26,15 +32,17 @@
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:orientation="vertical">
+
             <TextView
-                android:text="@string/Auth"
-                android:textSize="@dimen/_15sdp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_20sdp"/>
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:text="@string/Auth"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/personalAccountTil"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -49,12 +57,11 @@
                     android:id="@+id/personalAccountET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="0123456789+"
                     android:hint="Номер телефона"
                     android:inputType="phone"
                     android:paddingHorizontal="8dp"
-                    android:paddingVertical="12dp"
-                    android:digits="0123456789+"
-                    />
+                    android:paddingVertical="12dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -63,11 +70,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:passwordToggleEnabled="true"
+                android:orientation="horizontal"
                 app:boxCornerRadiusBottomEnd="20dp"
                 app:boxCornerRadiusBottomStart="20dp"
                 app:boxCornerRadiusTopEnd="20dp"
-                app:boxCornerRadiusTopStart="20dp">
+                app:boxCornerRadiusTopStart="20dp"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordEt"
@@ -86,9 +94,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:insetTop="0dp"
-                app:cornerRadius="20dp"
                 android:insetBottom="0dp"
-                android:text="Войти" />
+                android:text="Войти"
+                app:cornerRadius="20dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBarLogin"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

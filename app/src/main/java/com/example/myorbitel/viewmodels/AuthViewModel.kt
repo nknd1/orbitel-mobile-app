@@ -17,13 +17,17 @@ import kotlinx.coroutines.launch
 class AuthViewModel(
     application: Application,
 ) : AndroidViewModel(application) {
+    private val TAG = "AuthVM:"
     private val _token = MutableLiveData<String>()
     val token: LiveData<String> get() = _token
-    private val TAG = "AuthViewModel:"
     private val _clientInfo = MutableLiveData<ClientInfo>()
     val clientInfo: LiveData<ClientInfo> get() = _clientInfo
     private val _contracts = MutableLiveData<List<ContractInfo>>()
     val contracts: LiveData<List<ContractInfo>> get() = _contracts
+    private val _loginError = MutableLiveData<String?>()
+    val loginError: LiveData<String?> get() = _loginError
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> get() = _isLoading
 
     fun login(authRequest: AuthRequest) =
         viewModelScope.launch {
@@ -34,14 +38,17 @@ class AuthViewModel(
                         response.body()?.let {
                             saveToken(getApplication(), it.token)
                             _token.value = it.token
+                            _loginError.value = null
                         }
                     }
                     else -> {
                         Log.e(TAG, "Неверные данные: ${response.errorBody()?.string()}")
+                        _loginError.value = "Неверные данные"
                     }
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "Ошибка сервера: ${e.message}")
+                _loginError.value = "Ошибка сервера"
             }
         }
 
