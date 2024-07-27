@@ -10,7 +10,9 @@ class ServiceTariffAdapter(
     private var services: List<Service>,
     private val onAddService: (Int) -> Unit,
 ) : RecyclerView.Adapter<ServiceTariffAdapter.ServiceTariffViewHolder>() {
-    inner class ServiceTariffViewHolder(val binding: ItemServiceBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ServiceTariffViewHolder(
+        val binding: ItemServiceBinding,
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(service: Service) {
             "Название: ${service.service_name}".also { binding.serviceName.text = it }
             "Описание: ${service.feature}".also { binding.serviceFeature.text = it }
