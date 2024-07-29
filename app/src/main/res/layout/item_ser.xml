@@ -39,10 +39,11 @@
             android:layout_width="@dimen/_100sdp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:backgroundTint="@color/accent"
+            style="?attr/materialButtonOutlinedStyle"
+            app:strokeColor="@color/accent"
             app:cornerRadius="@dimen/_20sdp"
             android:hint="@string/OffService"
-            android:textColorHint="@color/white">
+            android:textColorHint="@color/accent">
 
         </com.google.android.material.button.MaterialButton>
 

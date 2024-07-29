@@ -78,6 +78,8 @@
     <string name="StopContract">Приостановить договор</string>
     <string name="CInfo">Подробнее о договоре</string>
     <string name="Auth">Авторизация в личный кабинет</string>
+    <string name="TopUpBalance">Пополнить баланс</string>
+    <string name="ServiceOnToTariff">Подключить</string>
 
 
     <!--  -->

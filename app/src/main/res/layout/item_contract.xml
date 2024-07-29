@@ -32,8 +32,8 @@
             android:layout_height="wrap_content"
             android:text="Personal Account"
             android:textSize="@dimen/_13ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvContractNumber"
+            app:layout_constraintStart_toStartOf="@+id/tvContractNumber"
             app:layout_constraintTop_toBottomOf="@+id/tvContractNumber" />
 
         <TextView
@@ -42,9 +42,9 @@
             android:layout_height="wrap_content"
             android:text="Balance"
             android:textSize="@dimen/_13ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPersonalAccount" />
+            app:layout_constraintEnd_toEndOf="@+id/tvConnectAddress"
+            app:layout_constraintStart_toStartOf="@+id/tvConnectAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tvConnectAddress" />
 
         <TextView
             android:id="@+id/tvConnectAddress"
@@ -52,36 +52,49 @@
             android:layout_height="wrap_content"
             android:text="Connect Address"
             android:textSize="@dimen/_13ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvBalance" />
+            app:layout_constraintEnd_toEndOf="@+id/tvPersonalAccount"
+            app:layout_constraintStart_toStartOf="@+id/tvPersonalAccount"
+            app:layout_constraintTop_toBottomOf="@+id/tvPersonalAccount" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnContractInfo"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="7dp"
             android:hint="@string/CInfo"
             android:textColorHint="@color/white"
-            style="@style/Widget.MaterialComponents.Button"
             app:cornerRadius="20dp"
-            app:layout_constraintEnd_toEndOf="@+id/tvConnectAddress"
-            app:layout_constraintStart_toStartOf="@+id/tvConnectAddress"
-            app:layout_constraintTop_toBottomOf="@+id/tvConnectAddress" />
+            app:layout_constraintEnd_toEndOf="@+id/tvBalance"
+            app:layout_constraintStart_toStartOf="@+id/tvBalance"
+            app:layout_constraintTop_toBottomOf="@+id/tvBalance" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTopUpBalance"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:hint="@string/TopUpBalance"
+            android:textColorHint="@color/white"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnOffContract"
+            app:layout_constraintEnd_toEndOf="@+id/btnContractInfo"
+            app:layout_constraintStart_toStartOf="@+id/btnContractInfo"
+            app:layout_constraintTop_toBottomOf="@+id/btnContractInfo" />
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnOffContract"
-            android:backgroundTint="@color/accent"
-            style="@style/Widget.MaterialComponents.Button"
-            app:cornerRadius="20dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:strokeColor="@color/accent"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
-            android:layout_marginTop="@dimen/_10sdp"
             android:hint="@string/StopContract"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/btnContractInfo"
-            app:layout_constraintTop_toBottomOf="@+id/btnContractInfo" />
+            android:textColorHint="@color/accent"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnTopUpBalance"
+            app:layout_constraintStart_toStartOf="@+id/btnTopUpBalance" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

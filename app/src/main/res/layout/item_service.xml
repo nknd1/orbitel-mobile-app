@@ -35,13 +35,16 @@
             android:layout_height="wrap_content"
             android:textSize="16sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddService"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Добавить"
+            style="?attr/materialButtonOutlinedStyle"
+            app:strokeColor="@color/primary"
+            android:hint="@string/ServiceOnToTariff"
+            android:textColorHint="@color/primary"
             android:layout_gravity="end"
-            android:textColorHint="@color/white"/>
+         />
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

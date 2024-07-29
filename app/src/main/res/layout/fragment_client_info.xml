@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    android:background="@color/DarkGray">
 
     <LinearLayout
         android:id="@+id/linear_header"
@@ -124,33 +124,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_20sdp" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddNewContract"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:padding="8dp"
+                android:text="@string/addNewContract"
+                app:cornerRadius="20dp" />
+
         </LinearLayout>
 
     </ScrollView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAddNewContract"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:padding="8dp"
-        android:text="@string/addNewContract"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTopUpBalance"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:padding="8dp"
-        android:text="@string/topUpBalance"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddNewContract"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

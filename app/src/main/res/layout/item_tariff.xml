@@ -39,7 +39,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/ApplyTariff"
-            android:textColorHint="@color/white"/>
+            android:layout_gravity="end"
+            style="?attr/materialButtonOutlinedStyle"
+            app:strokeColor="@color/primary"
+            android:textColorHint="@color/primary"/>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
