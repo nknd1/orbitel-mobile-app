@@ -1,9 +1,9 @@
 package com.example.myorbitel
 
-import com.example.myorbitel.models.AuthRequest
 import com.example.myorbitel.models.ClientInfo
 import com.example.myorbitel.models.ContractInfo
-import com.example.myorbitel.models.LoginResponse
+import com.example.myorbitel.models.request.AuthRequest
+import com.example.myorbitel.models.response.LoginResponse
 import com.example.myorbitel.network.ApiService
 import kotlinx.coroutines.runBlocking
 import org.junit.After

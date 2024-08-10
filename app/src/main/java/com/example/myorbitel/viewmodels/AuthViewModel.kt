@@ -6,9 +6,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.myorbitel.models.AuthRequest
 import com.example.myorbitel.models.ClientInfo
 import com.example.myorbitel.models.ContractInfo
+import com.example.myorbitel.models.request.AuthRequest
 import com.example.myorbitel.utils.RetrofitInstance
 import com.example.myorbitel.utils.getToken
 import com.example.myorbitel.utils.saveToken

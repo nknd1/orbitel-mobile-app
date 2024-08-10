@@ -1,4 +1,4 @@
-package com.example.myorbitel.models
+package com.example.myorbitel.models.request
 
 import com.google.gson.annotations.SerializedName
 
