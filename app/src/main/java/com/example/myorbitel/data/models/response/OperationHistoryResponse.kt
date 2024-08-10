@@ -1,7 +1,7 @@
-package com.example.myorbitel.models.response
+package com.example.myorbitel.data.models.response
 
-import com.example.myorbitel.models.Deposit
-import com.example.myorbitel.models.Writeoff
+import com.example.myorbitel.data.models.Deposit
+import com.example.myorbitel.data.models.Writeoff
 import com.google.gson.annotations.SerializedName
 
 data class OperationHistoryResponse(

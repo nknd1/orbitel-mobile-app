@@ -1,4 +1,4 @@
-package com.example.myorbitel.models
+package com.example.myorbitel.data.models
 
 data class Services(
     val service_id: Int,

@@ -1,10 +1,10 @@
 package com.example.myorbitel
 
-import com.example.myorbitel.models.ClientInfo
-import com.example.myorbitel.models.ContractInfo
-import com.example.myorbitel.models.request.AuthRequest
-import com.example.myorbitel.models.response.LoginResponse
-import com.example.myorbitel.network.ApiService
+import com.example.myorbitel.data.models.ClientInfo
+import com.example.myorbitel.data.models.ContractInfo
+import com.example.myorbitel.data.models.request.AuthRequest
+import com.example.myorbitel.data.models.response.LoginResponse
+import com.example.myorbitel.data.network.ApiService
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before

@@ -1,4 +1,4 @@
-package com.example.myorbitel.models.response
+package com.example.myorbitel.data.models.response
 
 data class TopUpResponse(
     val success: Boolean,

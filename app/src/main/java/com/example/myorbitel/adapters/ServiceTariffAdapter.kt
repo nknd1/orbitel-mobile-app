@@ -3,8 +3,8 @@ package com.example.myorbitel.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myorbitel.data.models.Service
 import com.example.myorbitel.databinding.ItemServiceBinding
-import com.example.myorbitel.models.Service
 
 class ServiceTariffAdapter(
     private var services: List<Service>,

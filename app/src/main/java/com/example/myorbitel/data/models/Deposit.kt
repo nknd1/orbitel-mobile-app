@@ -1,4 +1,4 @@
-package com.example.myorbitel.models
+package com.example.myorbitel.data.models
 
 data class Deposit(
     val deposit_id: Int,

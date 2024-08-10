@@ -6,7 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.myorbitel.models.response.ContractInfoResponse
+import com.example.myorbitel.data.models.response.ContractInfoResponse
 import com.example.myorbitel.utils.RetrofitInstance
 import com.example.myorbitel.utils.getToken
 import kotlinx.coroutines.launch

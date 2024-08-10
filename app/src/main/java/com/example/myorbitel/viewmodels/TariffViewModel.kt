@@ -3,7 +3,7 @@ package com.example.myorbitel.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.myorbitel.models.Tariffs
+import com.example.myorbitel.data.models.Tariffs
 import com.example.myorbitel.utils.RetrofitInstance
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

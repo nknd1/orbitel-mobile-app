@@ -1,4 +1,4 @@
-package com.example.myorbitel.models.request
+package com.example.myorbitel.data.models.request
 
 data class TopUpRequest(
     val balance: Double?,

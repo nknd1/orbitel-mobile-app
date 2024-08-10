@@ -1,14 +1,14 @@
-package com.example.myorbitel.network
+package com.example.myorbitel.data.network
 
-import com.example.myorbitel.models.ClientInfo
-import com.example.myorbitel.models.ContractInfo
-import com.example.myorbitel.models.Service
-import com.example.myorbitel.models.Tariffs
-import com.example.myorbitel.models.request.AuthRequest
-import com.example.myorbitel.models.request.TopUpRequest
-import com.example.myorbitel.models.response.ContractInfoResponse
-import com.example.myorbitel.models.response.LoginResponse
-import com.example.myorbitel.models.response.OperationHistoryResponse
+import com.example.myorbitel.data.models.ClientInfo
+import com.example.myorbitel.data.models.ContractInfo
+import com.example.myorbitel.data.models.Service
+import com.example.myorbitel.data.models.Tariffs
+import com.example.myorbitel.data.models.request.AuthRequest
+import com.example.myorbitel.data.models.request.TopUpRequest
+import com.example.myorbitel.data.models.response.ContractInfoResponse
+import com.example.myorbitel.data.models.response.LoginResponse
+import com.example.myorbitel.data.models.response.OperationHistoryResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE

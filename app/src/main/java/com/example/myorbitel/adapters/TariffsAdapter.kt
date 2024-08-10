@@ -5,8 +5,8 @@ package com.example.myorbitel.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myorbitel.data.models.Tariffs
 import com.example.myorbitel.databinding.ItemTariffBinding
-import com.example.myorbitel.models.Tariffs
 
 class TariffAdapter(
     private val tariffs: List<Tariffs>,

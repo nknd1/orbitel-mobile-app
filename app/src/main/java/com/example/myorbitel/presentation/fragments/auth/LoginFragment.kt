@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.myorbitel.R
+import com.example.myorbitel.data.models.request.AuthRequest
 import com.example.myorbitel.databinding.FragmentLoginBinding
-import com.example.myorbitel.models.request.AuthRequest
 import com.example.myorbitel.viewmodels.AuthViewModel
 
 class LoginFragment : Fragment() {

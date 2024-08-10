@@ -1,4 +1,4 @@
-package com.example.myorbitel.models
+package com.example.myorbitel.data.models
 
 data class ContractInfo(
     val contract_id: Int,
