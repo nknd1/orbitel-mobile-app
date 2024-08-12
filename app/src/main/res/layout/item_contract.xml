@@ -41,7 +41,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Balance"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/tvConnectAddress"
             app:layout_constraintStart_toStartOf="@+id/tvConnectAddress"
             app:layout_constraintTop_toBottomOf="@+id/tvConnectAddress" />
