@@ -18,16 +18,16 @@ class ContractDetailsViewModel(
     val contractDetails: LiveData<ContractInfoResponse> get() = _contractDetails
     private val _serviceRemoved = MutableLiveData<Boolean>()
     val serviceRemoved: LiveData<Boolean> get() = _serviceRemoved
-    private val TAG: String = ""
+    private val TAG: String = "ViewModel:"
 
     fun getContractDetails(contractId: Int) =
         viewModelScope.launch {
             val token = getToken(getApplication())
             token?.let {
-                try {
+                runCatching {
                     val response =
                         RetrofitInstance.apiService.getContractDetails("Bearer $it", contractId)
-                    if (response.isSuccessful) {
+                    return@runCatching if (response.isSuccessful) {
                         response.body()?.let { contractInfoResponse ->
                             _contractDetails.value = contractInfoResponse
                         }
@@ -37,9 +37,7 @@ class ContractDetailsViewModel(
                             "Fetching contract details failed: ${response.errorBody()?.string()}",
                         )
                     }
-                } catch (e: Exception) {
-                    Log.e(TAG, "Exception during fetching contract details: ${e.message}")
-                }
+                }.getOrElse { exception -> exception.message }
             } ?: run {
                 Log.e(TAG, "Token is null")
             }
