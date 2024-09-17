@@ -2,7 +2,7 @@ package com.example.myorbitel.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class ClientInfo(
+data class  ClientInfo(
     @SerializedName("client_id")
     val client_id: Int,
     @SerializedName("client_address_registration")
