@@ -28,7 +28,6 @@ class AuthViewModel(
     val loginError: LiveData<String?> get() = _loginError
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> get() = _isLoading
-
     fun login(authRequest: AuthRequest) =
         viewModelScope.launch {
             try {
@@ -39,6 +38,7 @@ class AuthViewModel(
                             saveToken(getApplication(), it.token)
                             _token.value = it.token
                             _loginError.value = null
+
                         }
                     }
                     else -> {
