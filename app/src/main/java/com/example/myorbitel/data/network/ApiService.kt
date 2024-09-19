@@ -19,7 +19,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface ApiService {
+interface  ApiService {
     @POST("clients/login")
     suspend fun login(
         @Body authRequest: AuthRequest,
