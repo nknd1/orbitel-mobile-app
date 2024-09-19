@@ -34,12 +34,9 @@ class ServiceListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[ServiceListViewModel::class.java]
 
-        adapter =
-            ServiceTariffAdapter(emptyList()) { serviceId ->
-                val contractId = arguments?.getInt("contractId") ?: return@ServiceTariffAdapter
+        adapter = ServiceTariffAdapter(emptyList()) { serviceId -> val contractId = arguments?.getInt("contractId") ?: return@ServiceTariffAdapter
                 viewModel.addServiceToContract(contractId, serviceId)
             }
-
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
 

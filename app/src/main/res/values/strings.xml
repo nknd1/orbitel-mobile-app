@@ -80,6 +80,8 @@
     <string name="Auth">Авторизация в личный кабинет</string>
     <string name="TopUpBalance">Пополнить баланс</string>
     <string name="ServiceOnToTariff">Подключить</string>
+    <string name="Services">Услуги</string>
+    <string name="Tariffs">Тарифы</string>
 
 
     <!--  -->

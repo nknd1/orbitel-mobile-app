@@ -6,7 +6,32 @@
     android:background="@color/gray"
     android:layout_height="match_parent"
     tools:context=".presentation.fragments.ServiceListFragment">
-
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/linear_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageButton
+            android:background=""
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_arrow_back_ios_24"/>
+        <TextView
+            android:id="@+id/header_title_my_cabinet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Services"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.072"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.appbar.MaterialToolbar>
     <!-- TODO: Update blank fragment layout -->
     <ProgressBar
         android:id="@+id/progressBar"
